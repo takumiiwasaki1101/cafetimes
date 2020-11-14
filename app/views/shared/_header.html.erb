@@ -1,0 +1,14 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to 'CafeTimes', "#", class: "category-list" %></li>
+    </ul>
+    <ul class='lists-right'>
+      <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
+        <li><%= link_to 'ログイン', "#" , class: "login" %></li>
+        <li><%= link_to '新規登録', "#" , class: "sign-up" %></li>
+      <%# //deviseを導入できたら、ログインの有無で表示が変わるように分岐しましょう%>
+    </ul>
+  </div>
+</header>
