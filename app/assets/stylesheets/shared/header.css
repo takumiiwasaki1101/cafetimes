@@ -1,7 +1,5 @@
 * {
   box-sizing: border-box;
-  color: #666;
-  font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
 }
 
 .top-page-header {
@@ -63,6 +61,10 @@
   padding-left: 10px;
   font-weight: bold;
   font-size: 24px;
+}
+
+a {
+  color: #666;
 }
 
 .category-list {
