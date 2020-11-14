@@ -65,6 +65,7 @@ header .lists-left {
 
 header a {
   color: #666;
+  margin-top: 5px;
 }
 
 header .category-list {
@@ -98,6 +99,7 @@ header span {
   cursor: pointer;
   position: relative;
   padding-left: 15px;
+  color: #666;
 }
 
 header span:after {
@@ -106,7 +108,7 @@ header span:after {
   margin-left: -4px;
 }
 
-header ul.lists-right span:hover ul{
+header ul.lists-right span:hover ul {
   color: #57C3E9;
   display: block;
 }
@@ -134,7 +136,6 @@ header ul.lists-right ul li a {
 
 header .user-nickname {
   text-decoration: none;
-  margin-right: 3vw;
   font-weight: bold;
 }
 
