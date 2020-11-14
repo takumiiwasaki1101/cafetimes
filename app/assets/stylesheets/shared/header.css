@@ -46,7 +46,7 @@
   width: 100%;
 }
 
-.nav {
+header .nav {
   font-size: 18px;
   display: flex;
   justify-content: space-between;
@@ -55,7 +55,7 @@
   padding: 1vh 0;
 }
 
-.lists-left {
+header .lists-left {
   display: flex;
   min-width: 200px;
   padding-left: 10px;
@@ -63,26 +63,76 @@
   font-size: 24px;
 }
 
-a {
+header a {
   color: #666;
 }
 
-.category-list {
+header .category-list {
   text-decoration: none;
   margin-right: 3vw;
 }
 
-.brand-list {
+header .brand-list {
   text-decoration: none;
 }
 
-.lists-right {
+header .lists-right {
   display: flex;
   list-style: none;
 }
 
+header .user_nav {
+  position: relative;
+  height: 100px;
+  right: 0;
+}
 
-.user-nickname {
+header span {
+  top: 5px;
+  display: block;
+  float: left;
+  margin-left: 30px;
+  width: 150px;
+  height: 50px;
+  font-size: 1em;
+  cursor: pointer;
+  position: relative;
+  padding-left: 15px;
+}
+
+header span:after {
+  content: '▼';
+  font-size: .7em;
+  margin-left: -4px;
+}
+
+header ul.lists-right span:hover ul{
+  color: #57C3E9;
+  display: block;
+}
+
+header ul.lists-right ul {
+  display: none;
+  position: absolute;
+  top: 46px;
+  border-left: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header ul.lists-right ul li {
+  background-color: #f0f0f0;
+}
+
+header ul.lists-right ul li a {
+  display: block;
+  padding: 10px 20px;
+  text-align: left;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+
+header .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
   font-weight: bold;
