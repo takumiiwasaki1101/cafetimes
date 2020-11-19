@@ -21,6 +21,6 @@ class Country < ActiveHash::Base
     { id: 19, name: 'ホンジュラス', area: '中央アメリカ', image:"" },
     { id: 20, name: 'エルサルバドル', area: '中央アメリカ', image:"" },
     { id: 21, name: 'グァテマラ', area: '中央アメリカ', image:"" },
-    { id: 21, name: 'アメリカ', area: '北アメリカ', image:"" },
+    { id: 22, name: 'アメリカ', area: '北アメリカ', image:"" },
   ]
 end
