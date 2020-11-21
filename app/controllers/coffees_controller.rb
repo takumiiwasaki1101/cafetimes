@@ -16,7 +16,19 @@ class CoffeesController < ApplicationController
     else
       render action: 'new' # バリデーションに弾かれた時
     end
+  end
 
+  def edit
+    @coffee = Coffee.find(params[:id])
+  end
+
+  def update
+    @coffee = Coffee.find(params[:id])
+    if @coffee.update(coffee_params)
+      redirect_to coffees_path
+    else
+      render action: 'edit'    # バリデーションに弾かれた時
+    end
   end
 
   private
