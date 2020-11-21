@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_11_14_123624) do
   create_table "coffees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "country_id", null: false
-    t.date "purchase_date", null: false
+    t.date "date_of_purchase", null: false
     t.string "shop", null: false
     t.text "detail"
     t.bigint "user_id"

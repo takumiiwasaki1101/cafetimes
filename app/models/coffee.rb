@@ -10,7 +10,7 @@ class Coffee < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :country_id
-    validates :purchase_date
+    validates :date_of_purchase
     validates :shop
   end
 
