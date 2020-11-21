@@ -93,13 +93,14 @@ header span {
   display: block;
   float: left;
   margin-left: 30px;
-  width: 150px;
+  width: 160px;
   height: 50px;
   font-size: 1em;
   cursor: pointer;
   position: relative;
   padding-left: 15px;
   color: #666;
+  z-index: 2;
 }
 
 header span:after {
@@ -133,6 +134,10 @@ header ul.lists-right ul li a {
   border-bottom: 1px solid #d8d8d8;
 }
 
+header ul.lists-right ul li a:hover {
+background-color: #57C3E9;
+color: #fff;
+}
 
 header .user-nickname {
   text-decoration: none;
