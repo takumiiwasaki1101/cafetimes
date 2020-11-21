@@ -42,4 +42,58 @@
   text-shadow: none
 }
 
+.card .more {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  right: 10px;
+  z-index: 2;
+  height: 100px;
+  width: 80px;
+  text-align: right;
+}
 
+.card .more span:after {
+  content: '▼';
+  font-size: 1.2em;
+  margin-left: -4px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  color: white;
+  opacity: .7;
+}
+
+.card .more:hover ul.more_list {
+  display: block;
+}
+
+.card .more ul.more_list {
+  position: absolute;
+  text-align: left;
+  width: 80px;
+  right: 0;
+  font-size: 12px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  display: none;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.card .more ul.more_list li {
+  border-bottom: 1px solid #ddd;
+  background-color: #f0f0f0;
+}
+
+.card .more ul.more_list li:last-child {
+  border-bottom: 0;
+}
+
+.card .more ul.more_list li a {
+  display: block;
+  padding: 5px;
+}
+
+.card .more ul.more_list li a:hover {
+  background-color: #57C3E9;
+  color: #fff;
+}

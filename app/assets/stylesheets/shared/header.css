@@ -134,6 +134,10 @@ header ul.lists-right ul li a {
   border-bottom: 1px solid #d8d8d8;
 }
 
+header ul.lists-right ul li a:hover {
+background-color: #57C3E9;
+color: #fff;
+}
 
 header .user-nickname {
   text-decoration: none;
