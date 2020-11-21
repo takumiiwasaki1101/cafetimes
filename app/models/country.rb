@@ -1,7 +1,7 @@
 class Country < ActiveHash::Base
   self.data = [
     { id: 0,  name: '--', area: '--', image:"" },
-    { id: 1,  name: 'ベトナム', area: 'アジア', image:"" },
+    { id: 1,  name: 'ベトナム', area: 'アジア', image:"/assets/countries/Vietnam.png" },
     { id: 2,  name: 'フィリピン', area: 'アジア', image:"" },
     { id: 3,  name: 'インドネシア', area: 'アジア', image:"" },
     { id: 4,  name: 'インド', area: 'アジア', image:"" },
