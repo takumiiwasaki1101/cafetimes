@@ -1,1 +1,15 @@
-hello world
+<%= render "shared/header"%>
+
+<div class="inner">
+  <div class="card__wrapper">
+    <% @coffees.each do |coffee| %>
+      <div class="card" style="background-image: url('<%= coffee.country.image %>');">
+        <div class="card__body">
+          <p class="card__summary">
+            <%= coffee.name %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
