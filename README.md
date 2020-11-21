@@ -19,7 +19,7 @@
 | --------------- | ---------- | ------------------------------ |
 | name            | string     | null: false                    |
 | country_id      | integer    | null: false                    |
-| purchase_date   | date       | null: false                    |
+| date_of_purchase| date       | null: false                    |
 | shop            | string     | null: false                    |
 | detail          | text       |                                |
 | user            | references | null: false, foreign_key: true |
