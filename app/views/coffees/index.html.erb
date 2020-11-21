@@ -4,6 +4,25 @@
   <div class="card__wrapper">
     <% @coffees.each do |coffee| %>
       <div class="card" style="background-image: url('<%= coffee.country.image %>');">
+        <div class="more">
+          <span></span>
+          <ul class="more_list">
+            <li>
+              <%= link_to '詳細', "#", method: :get %>
+            </li>
+            <% if user_signed_in? && current_user.id == coffee.user_id %>
+              <li>
+                <%= link_to '投稿', "#", method: :get %>
+              </li>
+              <li>
+                <%= link_to '編集', "#", method: :get %>
+              </li>
+              <li>
+                <%= link_to '削除', "#", method: :delete %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
         <div class="card__body">
           <p class="card__summary">
             <span>銘柄</span>
