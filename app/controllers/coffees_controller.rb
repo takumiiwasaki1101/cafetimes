@@ -1,7 +1,7 @@
 class CoffeesController < ApplicationController
 
   def index
-    @coffees = Coffee.all
+    @coffees = Coffee.where(user_id: current_user.id).order("created_at DESC")
   end
 
   def new 
