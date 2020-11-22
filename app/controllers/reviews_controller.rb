@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @coffee = Coffee.find(params[:coffee_id])
     @review = Review.new(review_params)
     if @review.valid?
       @review.save # バリデーションをクリアした時

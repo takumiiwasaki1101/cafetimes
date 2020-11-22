@@ -1,12 +1,14 @@
 <%= render "shared/header"%>
 
 <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
-<%= form_with model: @review , url: reviews_path ,class: 'registration-main', local: true do |f| %>
+<%= form_with model: @review , url: coffee_reviews_path ,class: 'registration-main', local: true do |f| %>
 <%# //「モデル名」にはUserモデルであれば@userを渡しましょう。「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
 <div class='form-wrap'>
   <div class='form-header'>
-    <h1 class='form-header-text'>
-      コーヒー情報入力
+    <h1 class='form-header-text-review'>
+      <span class='first'>銘柄:<%= @coffee.name %></span>      
+      <span class='second'>購入日:<%= @coffee.date_of_purchase %></span>      
+      <span class='third'>購入店:<%= @coffee.shop %></span>      
     </h1>
   </div>
 
@@ -16,27 +18,13 @@
 
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">銘柄</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.text_area :name, class:"input-default", id:"name", placeholder:"例) キリマンジャロ", maxlength:"40" %>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">国名</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.collection_select(:country_id, Country.all, :id, :name, {}, {class:"input-default", id:"item-category"}) %>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">購入日</label>
+      <label class="form-text">飲んだ日</label>
       <span class="indispensable">必須</span>
     </div>
     <div class='input-birth-wrap'>
       <%= raw sprintf(
                   f.date_select(
-                    :date_of_purchase,
+                    :date,
                     class:'sxlect-birth',
                     id:"birth-date",
                     use_month_numbers: true,
@@ -49,19 +37,12 @@
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">購入店</label>
-      <span class="indispensable">必須</span>
+      <label class="form-text">レビュー</label>
     </div>
-    <%= f.text_area :shop, class:"input-default", id:"shop", placeholder:"例) カルディ", maxlength:"40" %>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">詳細</label>
-    </div>
-    <%= f.text_area :detail, class:"input-long", id:"detail", placeholder:"例) カルディ" , rows:"7",maxlength:"1000" %>
+    <%= f.text_area :review, class:"input-long", id:"detail", placeholder:"飲んだ感想を書いてみよう。" , rows:"7",maxlength:"1000" %>
   </div>
   <div class='register-btn'>
-    <%= f.submit "コーヒー情報登録" ,class:"register-red-btn" %>
+    <%= f.submit "レビュー登録" ,class:"register-red-btn" %>
   </div>
 </div>
 <% end %>
