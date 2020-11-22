@@ -64,8 +64,8 @@
 
 .card .more ul.more_list {
   position: absolute;
-  text-align: left;
-  width: 80px;
+  text-align: center;
+  width: 50px;
   right: 0;
   font-size: 12px;
   background-color: #fff;
@@ -87,6 +87,7 @@
 .card .more ul.more_list li a {
   display: block;
   padding: 5px;
+  color: #666;
 }
 
 .card .more ul.more_list li a:hover {
