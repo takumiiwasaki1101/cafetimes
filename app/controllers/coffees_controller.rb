@@ -36,7 +36,6 @@ class CoffeesController < ApplicationController
     redirect_to coffees_path if @coffee.destroy
   end
 
-
   private
 
   def coffee_params
