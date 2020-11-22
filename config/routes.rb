@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
+  root to: "toppages#index"
   devise_for :users
   resources :coffees, only: [:index, :new, :create, :edit, :update, :destroy]
-  root to: "toppages#index"
+  resources :reviews, only: [:index, :new, :create]
 end
