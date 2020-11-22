@@ -4,6 +4,7 @@ class Coffee < ApplicationRecord
 
   # Association
   belongs_to :user
+  has_many :reviews
 
   # Validation
   ## 入力必須に関するvalidation
