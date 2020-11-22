@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @coffee = Coffee.find(params[:id])
+    @coffee = Coffee.find(params[:coffee_id])
     @review = Review.new
   end
 
