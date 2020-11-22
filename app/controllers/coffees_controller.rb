@@ -31,6 +31,12 @@ class CoffeesController < ApplicationController
     end
   end
 
+  def destroy
+    @coffee = Coffee.find(params[:id])
+    redirect_to coffees_path if @coffee.destroy
+  end
+
+
   private
 
   def coffee_params
