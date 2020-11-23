@@ -4,6 +4,10 @@ class CoffeesController < ApplicationController
     # @coffees = Coffee.includes(:user).where(user_id: current_user.id).order("created_at DESC").references(:user)
   end
 
+  def show
+    @coffee = Coffee.find(params[:id])
+  end
+  
   def new
     @coffee = Coffee.new
   end
