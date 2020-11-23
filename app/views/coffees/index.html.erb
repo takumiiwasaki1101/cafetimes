@@ -8,7 +8,7 @@
           <span></span>
           <ul class="more_list">
             <li>
-              <%= link_to '詳細', "#", method: :get %>
+              <%= link_to '詳細', coffee_path(coffee.id) , method: :get %>
             </li>
             <% if user_signed_in? && current_user.id == coffee.user_id %>
               <li>

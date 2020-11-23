@@ -1,0 +1,28 @@
+<%= render "shared/header"%>
+
+<div class='registration-main'>
+  <div class='form-wrap'>
+    <div class='form-header' style="background-image: url('<%= @coffee.country.image %>');">
+      <h1 class='form-header-text-review'>
+        <span class='first'>銘柄:<%= @coffee.name %></span>      
+        <span class='second'>購入日:<%= @coffee.date_of_purchase %></span>      
+        <span class='third'>購入店:<%= @coffee.shop %></span>      
+      </h1>
+    </div>
+    <% @coffee.reviews.each_with_index do |review, i| %>
+    <div class="form-group-coffees-show">
+      <div class='form-text-wrap'>
+        <label class="form-text"><%= i + 1%>回目</label>
+      </div>
+      <div class='form-text-wrap'>
+        <label class="form-text">飲んだ日</label>
+        <span class="indispensable"><%= review.date %></span>
+      </div>
+      <div class='form-text-wrap'>
+        <label class="form-text">レビュー</label>
+        <div class="input-long-coffees-show"><%= review.review %></div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
