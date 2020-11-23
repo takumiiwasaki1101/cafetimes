@@ -1,5 +1,4 @@
 class Review < ApplicationRecord
-
   # Association
   belongs_to :user
   belongs_to :coffee
@@ -10,5 +9,4 @@ class Review < ApplicationRecord
     validates :date
     validates :review
   end
-
 end
