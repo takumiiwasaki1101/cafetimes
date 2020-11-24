@@ -16,7 +16,7 @@ class CoffeesController < ApplicationController
     @coffee = Coffee.new(coffee_params)
     if @coffee.valid?
       @coffee.save # バリデーションをクリアした時
-      redirect_to root_path
+      redirect_to coffees_path
     else
       render action: 'new' # バリデーションに弾かれた時
     end
