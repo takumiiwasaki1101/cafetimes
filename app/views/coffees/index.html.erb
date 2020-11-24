@@ -1,43 +1,47 @@
 <%= render "shared/header"%>
 
 <% if @coffees.size == 0 %>
-
-<% end %>
-
-<div class="inner">
-  <div class="card__wrapper">
-    <% @coffees.each do |coffee| %>
-      <div class="card" style="background-image: url('<%= coffee.country.image %>');">
-        <div class="more">
-          <span></span>
-          <ul class="more_list">
-            <li>
-              <%= link_to '詳細', coffee_path(coffee.id) , method: :get %>
-            </li>
-            <% if user_signed_in? && current_user.id == coffee.user_id %>
-              <li>
-                <%= link_to '投稿', new_coffee_review_path(coffee.id) , method: :get %>
-              </li>
-              <li>
-                <%= link_to '編集', edit_coffee_path(coffee.id), method: :get %>
-              </li>
-              <li>
-                <%= link_to '削除', coffee_path(coffee.id), method: :delete %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="card__body">
-          <p class="card__summary">
-            <span>銘柄</span>
-            <%= coffee.name %>
-            <span>購入店</span>
-            <%= coffee.shop %>
-            <span>購入日</span>
-            <%= coffee.date_of_purchase %>
-          </p>
-        </div>
-      </div>
-    <% end %>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      まずは<%= link_to 'コーヒーの登録', new_coffee_path ,  class: "logout" %>を行いましょう！
+    </h1>
   </div>
-</div>
+<% else %>
+  <div class="inner">
+    <div class="card__wrapper">
+      <% @coffees.each do |coffee| %>
+        <div class="card" style="background-image: url('<%= coffee.country.image %>');">
+          <div class="more">
+            <span></span>
+            <ul class="more_list">
+              <li>
+                <%= link_to '詳細', coffee_path(coffee.id) , method: :get %>
+              </li>
+              <% if user_signed_in? && current_user.id == coffee.user_id %>
+                <li>
+                  <%= link_to '投稿', new_coffee_review_path(coffee.id) , method: :get %>
+                </li>
+                <li>
+                  <%= link_to '編集', edit_coffee_path(coffee.id), method: :get %>
+                </li>
+                <li>
+                  <%= link_to '削除', coffee_path(coffee.id), method: :delete %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="card__body">
+            <p class="card__summary">
+              <span>銘柄</span>
+              <%= coffee.name %>
+              <span>購入店</span>
+              <%= coffee.shop %>
+              <span>購入日</span>
+              <%= coffee.date_of_purchase %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
