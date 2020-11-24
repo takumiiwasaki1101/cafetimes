@@ -1,5 +1,9 @@
 <%= render "shared/header"%>
 
+<% if @coffees.size == 0 %>
+
+<% end %>
+
 <div class="inner">
   <div class="card__wrapper">
     <% @coffees.each do |coffee| %>
