@@ -9,7 +9,7 @@
 <% elsif @reviews.size == 0 %>
   <div class='form-header'>
     <h1 class='form-header-text'>
-      まずはレビューの投稿を行いましょう！
+      まずは<%= link_to 'レビューの投稿', new_coffee_review_path(@coffee.id) , method: :get %>を行いましょう！
     </h1>
   </div>
 <% else %>
