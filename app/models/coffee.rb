@@ -4,7 +4,7 @@ class Coffee < ApplicationRecord
 
   # Association
   belongs_to :user
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   # Validation
   ## 入力必須に関するvalidation
