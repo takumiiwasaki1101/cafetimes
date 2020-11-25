@@ -15,7 +15,6 @@ RSpec.describe Review, type: :model do
         @review.tool_id = 0
         expect(@review).to be_valid
       end
-
     end
 
     context '新規登録失敗時' do

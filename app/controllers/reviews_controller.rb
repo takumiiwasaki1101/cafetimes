@@ -35,5 +35,4 @@ class ReviewsController < ApplicationController
   def move_to_coffees_path
     redirect_to coffees_path unless current_user.id == @coffee.user_id
   end
-
 end

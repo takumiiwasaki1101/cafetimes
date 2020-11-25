@@ -10,7 +10,7 @@ class CoffeesController < ApplicationController
 
   def show
   end
-  
+
   def new
     @coffee = Coffee.new
   end
@@ -53,5 +53,4 @@ class CoffeesController < ApplicationController
   def move_to_index
     redirect_to action: :index unless current_user.id == @coffee.user_id
   end
-
 end
