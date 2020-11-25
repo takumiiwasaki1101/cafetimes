@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     if @review.valid?
       @review.save # バリデーションをクリアした時
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render action: 'new' # バリデーションに弾かれた時
     end

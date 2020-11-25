@@ -18,6 +18,12 @@
         <label class="form-text">飲んだ日</label>
         <span class="indispensable"><%= review.date %></span>
       </div>
+      <% if review.tool.id != 0 %>
+        <div class='form-text-wrap'>
+          <label class="form-text">抽出器具</label>
+          <span class="indispensable"><%= review.tool.name %></span>
+        </div>
+      <% end %>
       <div class='form-text-wrap'>
         <label class="form-text">レビュー</label>
         <div class="input-long-coffees-show"><%= review.review %></div>
