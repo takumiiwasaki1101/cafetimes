@@ -1,4 +1,6 @@
 class CoffeesController < ApplicationController
+  before_action :authenticate_user!, except: :index
+  
   def index
     @coffees = Coffee.where(user_id: current_user.id).order('created_at DESC')
     # @coffees = Coffee.includes(:user).where(user_id: current_user.id).order("created_at DESC").references(:user)
