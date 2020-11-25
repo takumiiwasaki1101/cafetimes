@@ -1,5 +1,6 @@
 class CoffeesController < ApplicationController
   before_action :authenticate_user!, except: :index
+  before_action :set_coffee, only: [:show, :edit, :update, :destroy]
   
   def index
     @coffees = Coffee.where(user_id: current_user.id).order('created_at DESC')
@@ -7,7 +8,6 @@ class CoffeesController < ApplicationController
   end
 
   def show
-    @coffee = Coffee.find(params[:id])
   end
   
   def new
@@ -25,11 +25,9 @@ class CoffeesController < ApplicationController
   end
 
   def edit
-    @coffee = Coffee.find(params[:id])
   end
 
   def update
-    @coffee = Coffee.find(params[:id])
     if @coffee.update(coffee_params)
       redirect_to coffees_path
     else
@@ -38,7 +36,6 @@ class CoffeesController < ApplicationController
   end
 
   def destroy
-    @coffee = Coffee.find(params[:id])
     redirect_to coffees_path if @coffee.destroy
   end
 
@@ -47,4 +44,9 @@ class CoffeesController < ApplicationController
   def coffee_params
     params.require(:coffee).permit(:name, :country_id, :date_of_purchase, :shop, :detail).merge(user_id: current_user.id)
   end
+
+  def set_coffee
+    @coffee = Coffee.find(params[:id])
+  end
+
 end

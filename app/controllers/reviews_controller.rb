@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_coffee, only: [:new, :create]
 
   def index
     # @coffees = Coffee.where(user_id: current_user.id).order('created_at DESC')
@@ -7,12 +8,10 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @coffee = Coffee.find(params[:coffee_id])
     @review = Review.new
   end
 
   def create
-    @coffee = Coffee.find(params[:coffee_id])
     @review = Review.new(review_params)
     if @review.valid?
       @review.save # バリデーションをクリアした時
@@ -27,4 +26,9 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:date, :tool_id, :review).merge(user_id: current_user.id, coffee_id: params[:coffee_id])
   end
+
+  def set_coffee
+    @coffee = Coffee.find(params[:coffee_id])
+  end
+
 end
