@@ -7,9 +7,15 @@ RSpec.describe Review, type: :model do
     end
 
     context '新規登録成功時' do
-      it 'date、reviewが存在すれば登録できること' do
+      it 'date、tool_id、reviewが存在すれば登録できること' do
         expect(@review).to be_valid
       end
+
+      it 'tool_idが0でも登録できること' do
+        @review.tool_id = 0
+        expect(@review).to be_valid
+      end
+
     end
 
     context '新規登録失敗時' do
