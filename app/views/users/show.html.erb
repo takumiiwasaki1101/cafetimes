@@ -19,9 +19,10 @@
     <div class='form-wrap-show'>
       <div class='form-header' style="background-image: url('<%= review.coffee.country.image %>');">
         <h1 class='form-header-text-review'>
-          <span class='first'>銘柄:<%= review.coffee.name %></span>      
-          <span class='second'>購入日:<%= review.coffee.date_of_purchase %></span>      
-          <span class='third'>購入店:<%= review.coffee.shop %></span>      
+          <span class='first'>銘柄:<%= @coffee.name %></span>      
+          <span class='second'>原産国:<%= @coffee.country.name %></span>      
+          <span class='third'>購入日:<%= @coffee.date_of_purchase %></span>      
+          <span class='fourth'>購入店:<%= @coffee.shop %></span>      
         </h1>
       </div>
       <div class="form-group-coffees-show">
