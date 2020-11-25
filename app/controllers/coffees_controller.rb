@@ -1,7 +1,8 @@
 class CoffeesController < ApplicationController
   before_action :authenticate_user!, except: :index
   before_action :set_coffee, only: [:show, :edit, :update, :destroy]
-  
+  before_action :move_to_index, only: [:edit, :update, :destroy]
+
   def index
     @coffees = Coffee.where(user_id: current_user.id).order('created_at DESC')
     # @coffees = Coffee.includes(:user).where(user_id: current_user.id).order("created_at DESC").references(:user)
@@ -47,6 +48,10 @@ class CoffeesController < ApplicationController
 
   def set_coffee
     @coffee = Coffee.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless current_user.id == @coffee.user_id
   end
 
 end

@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_coffee, only: [:new, :create]
+  before_action :move_to_coffees_path, only: [:new, :create]
 
   def index
     # @coffees = Coffee.where(user_id: current_user.id).order('created_at DESC')
@@ -29,6 +30,10 @@ class ReviewsController < ApplicationController
 
   def set_coffee
     @coffee = Coffee.find(params[:coffee_id])
+  end
+
+  def move_to_coffees_path
+    redirect_to coffees_path unless current_user.id == @coffee.user_id
   end
 
 end
