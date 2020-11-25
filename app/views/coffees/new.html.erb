@@ -23,7 +23,7 @@
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">国名</label>
+      <label class="form-text">原産国</label>
       <span class="indispensable">必須</span>
     </div>
     <%= f.collection_select(:country_id, Country.all, :id, :name, {}, {class:"input-default", id:"item-category"}) %>
@@ -58,7 +58,7 @@
     <div class='form-text-wrap'>
       <label class="form-text">詳細</label>
     </div>
-    <%= f.text_area :detail, class:"input-long", id:"detail", placeholder:"例) カルディ" , rows:"7",maxlength:"1000" %>
+    <%= f.text_area :detail, class:"input-long", id:"detail", placeholder:"例) 値段やグラム数など記録に残したいことをメモしましょう" , rows:"7",maxlength:"1000" %>
   </div>
   <div class='register-btn'>
     <%= f.submit "コーヒー情報登録" ,class:"register-red-btn" %>
