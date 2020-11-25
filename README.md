@@ -34,6 +34,7 @@
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | date            | date       | null: false                    |
+| tool_id         | integer    |                                |
 | review          | text       | null: false                    |
 | user            | references | null: false, foreign_key: true |
 | coffee          | references | null: false, foreign_key: true |
