@@ -10,7 +10,7 @@
   <div class="inner">
     <div class="card__wrapper">
       <% @coffees.each do |coffee| %>
-        <div class="card" style="background-image: url('<%= asset_path coffee.country.image %>');">
+        <div class="card" style="background-image: url(<%= asset_path coffee.country.image %>)">
           <div class="more">
             <span></span>
             <ul class="more_list">
