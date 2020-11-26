@@ -10,6 +10,13 @@
         <span class='fourth'>購入店:<%= @coffee.shop %></span>      
       </h1>
     </div>
+  <% if @coffee.reviews.size == 0 %>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        まずは<%= link_to 'レビューの投稿', new_coffee_review_path(@coffee.id) , method: :get %>を行いましょう！
+      </h1>
+    </div>
+  <% end %>
     <% @coffee.reviews.each_with_index do |review, i| %>
     <div class="form-group-coffees-show">
       <div class='form-text-wrap'>

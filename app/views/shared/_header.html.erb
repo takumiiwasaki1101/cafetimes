@@ -3,7 +3,7 @@
   <div class='nav'>
     <ul class='lists-left'>
       <% if user_signed_in? %>
-        <li><%= link_to 'Coffeelists', coffees_path, class: "category-list" %></li>
+        <li><%= link_to 'Coffeebeans', coffees_path, class: "category-list" %></li>
       <% else %>
         <li><%= link_to 'CafeTimes', root_path, class: "category-list" %></li>
       <% end %>
@@ -19,7 +19,7 @@
             </li>
           </ul>
         </span>
-        <%= link_to 'コーヒーの登録', new_coffee_path ,  class: "logout" %>
+        <%= link_to 'コーヒー豆の登録', new_coffee_path ,  class: "logout" %>
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path , class: "login" %></li>
         <li><%= link_to '新規登録', new_user_registration_path , class: "sign-up" %></li>
