@@ -1,19 +1,24 @@
 <%= render "shared/header" %>
 
-<% if @coffees.size == 0 %>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-      まずは<%= link_to 'コーヒー豆の登録', new_coffee_path ,  class: "logout" %>を行いましょう！
-    </h1>
-  </div>
-<% elsif @reviews.size == 0 %>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-      まずは<%= link_to 'レビューの投稿', new_coffee_review_path(@coffee.id) , method: :get %>を行いましょう！
-    </h1>
-  </div>
+<%# 未投稿時のメッセージ %>
+<% if @user.id == current_user.id %>
+  <% if @coffees.size == 0 %>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        まずは<%= link_to 'コーヒー豆の登録', new_coffee_path ,  class: "logout" %>を行いましょう！
+      </h1>
+    </div>
+  <% elsif @reviews.size == 0 %>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        まずは<%= link_to 'レビューの投稿', new_coffee_review_path(@coffee.id) , method: :get %>を行いましょう！
+      </h1>
+    </div>
+  <% end %>
 <% end %>
+<%# //未投稿時のメッセージ %>
 
+<%# レビューの一覧 %>
 <% @reviews.each do |review| %>
   <div class='registration-main'>
     <div class='form-wrap-show'>
@@ -44,3 +49,4 @@
     </div>
   </div>
 <% end %>
+<%# //レビューの一覧 %>
