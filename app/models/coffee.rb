@@ -16,7 +16,7 @@ class Coffee < ApplicationRecord
   end
 
   ## id0以外での入力を必須とするvalidation
-  with_options numericality: { other_than: 0, message: 'Select' } do
+  with_options numericality: { other_than: 0, message: 'を入力してください' } do
     validates :country_id
   end
 end

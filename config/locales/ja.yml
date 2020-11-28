@@ -1,6 +1,16 @@
 ---
 ja:
   activerecord:
+    attributes:
+      coffee:
+        name: 銘柄
+        date_of_purchase: 購入日
+        shop: 購入店
+        country_id: 原産国
+      review: 
+        review: レビュー
+        date: 飲んだ日
+        
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
