@@ -22,13 +22,13 @@ RSpec.describe Review, type: :model do
       it 'dateが空では登録できないこと' do
         @review.date = nil
         @review.valid?
-        expect(@review.errors.full_messages).to include("Date can't be blank")
+        expect(@review.errors.full_messages).to include("飲んだ日を入力してください")
       end
 
       it 'reviewが空では登録できないこと' do
         @review.review = nil
         @review.valid?
-        expect(@review.errors.full_messages).to include("Review can't be blank")
+        expect(@review.errors.full_messages).to include("レビューを入力してください")
       end
       # 空では登録できないことを確認
     end
