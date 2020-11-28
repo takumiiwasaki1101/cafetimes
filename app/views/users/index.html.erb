@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+
+<div class="inner">
+  <div class="card__wrapper">
+    <% @users.each do |user| %>
+      <div class="card">
+        <div class="card__body">
+          <p class="card__summary">
+            <span>ニックネーム</span>
+            <%= link_to user.nickname, user_path(user.id) %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
