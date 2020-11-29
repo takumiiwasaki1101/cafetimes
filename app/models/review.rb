@@ -18,7 +18,6 @@ class Review < ApplicationRecord
     validates :amount_of_coffee, allow_nil: true
     validates :amount_of_water, allow_nil: true
     validates :pre_infusion_time, allow_nil: true
-    validates :extraction_time, allow_nil: true    
+    validates :extraction_time, allow_nil: true
   end
-
 end

@@ -37,7 +37,6 @@ RSpec.describe Review, type: :model do
         expect(@review).to be_valid
       end
       # //空や0でも登録できることを確認
-
     end
 
     context '新規登録失敗時' do
@@ -80,7 +79,6 @@ RSpec.describe Review, type: :model do
         expect(@review.errors.full_messages).to include('抽出時間は半角数字で入力してください')
       end
       # 半角数字のみ保存可能であることを確認
-      
     end
   end
 end
