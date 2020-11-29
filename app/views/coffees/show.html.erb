@@ -2,6 +2,7 @@
 
 <div class="registration-main">
   <div class='form-wrap-show'>
+  <%# 該当コーヒー情報の表示 %>
     <div class='form-header' style="background-image: url('<%= @coffee.country.image %>');">
       <h1 class='form-header-text-review'>
         <span class='first'>銘柄:<%= @coffee.name %></span>      
@@ -10,6 +11,9 @@
         <span class='fourth'>購入店:<%= @coffee.shop %></span>      
       </h1>
     </div>
+  <%# //該当コーヒー情報の表示 %>
+
+  <%# レビュー未投稿時のメッセージ %>
   <% if @coffee.reviews.size == 0 %>
     <div class='form-header'>
       <h1 class='form-header-text'>
@@ -17,7 +21,10 @@
       </h1>
     </div>
   <% end %>
-    <% @coffee.reviews.each_with_index do |review, i| %>
+  <%# //レビュー未投稿時のメッセージ %>
+
+  <%# レビュー内容の表示 %>
+  <% @coffee.reviews.each_with_index do |review, i| %>
     <div class="form-group-coffees-show">
       <div class='form-text-wrap'>
         <label class="form-text"><%= i + 1%>回目</label>
@@ -37,6 +44,7 @@
         <div class="input-long-coffees-show"><%= review.review %></div>
       </div>
     </div>
-    <% end %>
+  <% end %>
+  <%# //レビュー内容の表示 %>
   </div>
 </div>
