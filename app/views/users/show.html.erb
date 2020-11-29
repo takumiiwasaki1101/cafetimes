@@ -41,12 +41,40 @@
           <label class="form-text">飲んだ日</label>
           <span class="indispensable"><%= review.date %></span>
         </div>
+
+        <%# 任意項目（未登録なら非表示） %>
         <% if review.tool.id != 0 %>
           <div class='form-text-wrap'>
             <label class="form-text">抽出器具</label>
             <span class="indispensable"><%= review.tool.name %></span>
           </div>
         <% end %>
+        <% if review.amount_of_coffee %>
+          <div class='form-text-wrap'>
+            <label class="form-text">コーヒー豆の量</label>
+            <span class="indispensable"><%= review.amount_of_coffee %>g</span>
+          </div>
+        <% end %>
+        <% if review.amount_of_water %>
+          <div class='form-text-wrap'>
+            <label class="form-text">お湯の量</label>
+            <span class="indispensable"><%= review.amount_of_water %>ml</span>
+          </div>
+        <% end %>
+        <% if review.pre_infusion_time %>
+          <div class='form-text-wrap'>
+            <label class="form-text">蒸らし時間</label>
+            <span class="indispensable"><%= review.pre_infusion_time %>秒</span>
+          </div>
+        <% end %>
+        <% if review.extraction_time %>
+          <div class='form-text-wrap'>
+            <label class="form-text">抽出時間</label>
+            <span class="indispensable"><%= review.extraction_time %>秒</span>
+          </div>
+        <% end %>
+        <%# //任意項目（未登録なら非表示） %>
+        
         <div class='form-text-wrap'>
           <label class="form-text">レビュー</label>
           <div class="input-long-coffees-show"><%= review.review %></div>
