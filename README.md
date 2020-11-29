@@ -31,13 +31,17 @@
 
 ## reviews
 
-| Column          | Type       | Options                        |
-| --------------- | ---------- | ------------------------------ |
-| date            | date       | null: false                    |
-| tool_id         | integer    |                                |
-| review          | text       | null: false                    |
-| user            | references | null: false, foreign_key: true |
-| coffee          | references | null: false, foreign_key: true |
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| date              | date       | null: false                    |
+| tool_id           | integer    |                                |
+| amount_of_coffee  | integer    |                                |
+| amount_of_water   | integer    |                                |
+| pre_infusion_time | integer    |                                |
+| extraction_time   | integer    |                                |
+| review            | text       | null: false                    |
+| user              | references | null: false, foreign_key: true |
+| coffee            | references | null: false, foreign_key: true |
 
 ### Association
 
