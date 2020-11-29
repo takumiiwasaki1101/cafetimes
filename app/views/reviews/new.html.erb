@@ -3,7 +3,7 @@
 <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
 <%= form_with model: @review , url: coffee_reviews_path ,class: 'registration-main', local: true do |f| %>
 <%# //「モデル名」にはUserモデルであれば@userを渡しましょう。「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
-<div class='form-wrap'>
+<div class='form-wrap-show'>
   <div class='form-header' style="background-image: url('<%= @coffee.country.image %>');">
     <h1 class='form-header-text-review'>
       <span class='first'>銘柄:<%= @coffee.name %></span>      
