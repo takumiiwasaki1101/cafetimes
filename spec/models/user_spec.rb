@@ -31,19 +31,19 @@ RSpec.describe User, type: :model do
       it 'nicknameが空では登録できないこと' do
         @user.nickname = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネームを入力してください")
+        expect(@user.errors.full_messages).to include('ニックネームを入力してください')
       end
 
       it 'emailが空では登録できないこと' do
         @user.email = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("メールアドレスを入力してください")
+        expect(@user.errors.full_messages).to include('メールアドレスを入力してください')
       end
 
       it 'passwordが空では登録できないこと' do
         @user.password = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを入力してください')
       end
 
       # /空では登録できないことを確認
@@ -79,7 +79,7 @@ RSpec.describe User, type: :model do
         @user.password = 'T12345'
         @user.password_confirmation = 'T123456'
         @user.valid?
-        expect(@user.errors.full_messages).to include("確認用パスワードとパスワードの入力が一致しません")
+        expect(@user.errors.full_messages).to include('確認用パスワードとパスワードの入力が一致しません')
       end
       # パスワードの不一致の場合は登録できないことを確認
 

@@ -23,25 +23,25 @@ RSpec.describe Coffee, type: :model do
       it 'nameが空では登録できないこと' do
         @coffee.name = nil
         @coffee.valid?
-        expect(@coffee.errors.full_messages).to include("銘柄を入力してください")
+        expect(@coffee.errors.full_messages).to include('銘柄を入力してください')
       end
 
       it 'country_idが空では登録できないこと' do
         @coffee.country_id = nil
         @coffee.valid?
-        expect(@coffee.errors.full_messages).to include("原産国を入力してください")
+        expect(@coffee.errors.full_messages).to include('原産国を入力してください')
       end
 
       it 'date_of_purchaseが空では登録できないこと' do
         @coffee.date_of_purchase = nil
         @coffee.valid?
-        expect(@coffee.errors.full_messages).to include("購入日を入力してください")
+        expect(@coffee.errors.full_messages).to include('購入日を入力してください')
       end
 
       it 'shopが空では登録できないこと' do
         @coffee.shop = nil
         @coffee.valid?
-        expect(@coffee.errors.full_messages).to include("購入店を入力してください")
+        expect(@coffee.errors.full_messages).to include('購入店を入力してください')
       end
 
       # 空では登録できないことを確認
