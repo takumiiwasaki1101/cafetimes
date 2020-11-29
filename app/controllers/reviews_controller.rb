@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:date, :tool_id, :review).merge(user_id: current_user.id, coffee_id: params[:coffee_id])
+    params.require(:review).permit(:date, :tool_id, :amount_of_coffee, :amount_of_water, :pre_infusion_time, :extraction_time, :review).merge(user_id: current_user.id, coffee_id: params[:coffee_id])
   end
 
   def set_coffee
