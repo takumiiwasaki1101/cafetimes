@@ -8,9 +8,12 @@ ja:
         shop: 購入店
         country_id: 原産国
       review: 
-        review: レビュー
         date: 飲んだ日
-        
+        amount_of_coffee: コーヒー豆の量
+        amount_of_water: お湯の量
+        pre_infusion_time: 蒸らし時間
+        extraction_time: 抽出時間
+        review: レビュー
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
