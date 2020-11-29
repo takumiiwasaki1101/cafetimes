@@ -45,12 +45,53 @@
       <%= f.collection_select(:tool_id, Tool.all, :id, :name, {}, {class:"input-default", id:"item-category"}) %>
     </div>
 
+    <%# 数値入力 %>
+    <div class="form-group">
+      <div class="form-text-wrap">
+        <label class="form-text">各種数値</label>
+        <span class="indispensable">任意</span>
+      </div>
+      <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>コーヒー豆の量</span>
+          </div>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"20" %>
+          <span class="sell-yen">g</span>
+        </div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>お湯の量</span>
+          </div>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"350" %>
+          <span class="sell-yen">ml</span>
+        </div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>抽出時間（蒸らし）</span>
+          </div>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"60" %>
+          <span class="sell-yen">秒</span>
+        </div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>抽出時間（蒸らし除）</span>
+          </div>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"180" %>
+          <span class="sell-yen">秒</span>
+        </div>
+
+      </div>
+    </div>
+    <%# /数値入力 %>
+
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">レビュー</label>
       </div>
       <%= f.text_area :review, class:"input-long", id:"review", placeholder:"飲んだ感想を書いてみよう。" , rows:"7",maxlength:"1000" %>
     </div>
+
     <div class='register-btn'>
       <%= f.submit "レビュー投稿" ,class:"register-red-btn" %>
     </div>
