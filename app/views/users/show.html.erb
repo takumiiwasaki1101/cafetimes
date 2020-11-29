@@ -1,20 +1,26 @@
 <%= render "shared/header" %>
 
 <%# 未投稿時のメッセージ %>
-<% if @user.id == current_user.id %>
-  <% if @coffees.size == 0 %>
-    <div class='form-header'>
-      <h1 class='form-header-text'>
+<% if @coffees.size == 0 %>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      <% if @user.id == current_user.id %>
         まずは<%= link_to 'コーヒー豆の登録', new_coffee_path ,  class: "logout" %>を行いましょう！
-      </h1>
-    </div>
-  <% elsif @reviews.size == 0 %>
-    <div class='form-header'>
-      <h1 class='form-header-text'>
+      <% else %>
+        <%= @user.nickname %>さんのレビューはまだありません
+      <% end %>
+    </h1>
+  </div>
+<% elsif @reviews.size == 0 %>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      <% if @user.id == current_user.id %>
         まずは<%= link_to 'レビューの投稿', new_coffee_review_path(@coffee.id) , method: :get %>を行いましょう！
-      </h1>
-    </div>
-  <% end %>
+      <% else %>
+        <%= @user.nickname %>さんのレビューはまだありません
+      <% end %>
+    </h1>
+  </div>
 <% end %>
 <%# //未投稿時のメッセージ %>
 
