@@ -29,7 +29,7 @@
 - has_many :reviews
 - belongs_to :user
 
-## reviews
+## reviews テーブル
 
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | ------------------------------ |
