@@ -20,7 +20,7 @@
             </li>
           </ul>
         </span>
-        <%= link_to 'コーヒー豆の登録', new_coffee_path ,  class: "logout" %>
+        <%= link_to 'コーヒー豆の登録', new_coffee_path ,  class: "coffee-registration" ,id: "coffee-registration" %>
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path , class: "login" %></li>
         <li><%= link_to '新規登録', new_user_registration_path , class: "sign-up" %></li>

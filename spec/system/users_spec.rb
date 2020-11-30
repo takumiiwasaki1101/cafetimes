@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "ユーザーログイン機能", type: :system do
   
   it 'ログインに成功し、coffees#indexページに遷移する' do
-    # 予め、ユーザーをDBに保存する
+    # ユーザーをDBに保存する
     @user = FactoryBot.create(:user)
 
     # サインインページへ移動する

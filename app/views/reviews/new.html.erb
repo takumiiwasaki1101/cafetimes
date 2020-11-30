@@ -42,7 +42,7 @@
         <label class="form-text">抽出器具</label>
         <span class="indispensable">任意</span>
       </div>
-      <%= f.collection_select(:tool_id, Tool.all, :id, :name, {}, {class:"input-default", id:"item-category"}) %>
+      <%= f.collection_select(:tool_id, Tool.all, :id, :name, {}, {class:"input-default", id:"tool-category"}) %>
     </div>
 
     <%# 数値入力 %>
