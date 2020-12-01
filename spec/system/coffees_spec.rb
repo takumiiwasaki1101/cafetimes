@@ -11,7 +11,7 @@ RSpec.describe "コーヒー豆の登録機能", type: :system do
   end
 
   context '登録に成功したとき' do
-    it 'コーヒーの登録に成功すると、コーヒー一覧ページに遷移して、登録した内容が表示されている' do
+    it 'コーヒーの登録に成功すると、登録した内容を含んだコーヒー一覧ページに遷移する' do
       # サインインする
       sign_in(@user)
 
@@ -43,64 +43,27 @@ RSpec.describe "コーヒー豆の登録機能", type: :system do
     end
   end
 
-  context '投稿に成功したとき' do
-    it '送る値が空の為、メッセージの送信に失敗すること' do
+  context '登録に失敗したとき' do
+    it 'コーヒーの登録に失敗すると、DBは保存されず、コーヒー登録ページに戻される' do
       # サインインする
-      sign_in(@room_user.user)
+      sign_in(@user)
 
-      # 作成されたチャットルームへ遷移する
-      click_on(@room_user.room.name)
+      # ヘッダーにある「コーヒー豆の登録」をクリックする
+      click_on "coffee-registration"
 
-      # 値をテキストフォームに入力する
+      # コーヒー豆の登録ページに遷移していることを確認する
+      expect(current_path).to eq new_coffee_path
 
-      # 送信した値がDBに保存されていることを確認する
+      # コーヒー豆の登録をクリックしても、Coffeeモデルのカウントは上がらない
+      expect{
+        find('input[name="commit"]').click
+      }.not_to change { Coffee.count }
 
-      # 投稿一覧画面に遷移していることを確認する
+      # コーヒー豆の登録ページに戻ってくることを確認する
+      expect(page).to have_content "コーヒー豆の登録"
 
-      # 送信した値がブラウザに表示されていることを確認する
-
-    end
-
-    it '画像の投稿に成功すると、投稿一覧に遷移して、投稿した画像が表示されている' do
-      # サインインする
-      sign_in(@room_user.user)
-
-      # 作成されたチャットルームへ遷移する
-      click_on(@room_user.room.name)
-
-      # 添付する画像を定義する
-      image_path = Rails.root.join('public/images/test_image.png')
-
-      # 画像選択フォームに画像を添付する
-
-      # 送信した値がDBに保存されていることを確認する
-
-      # 投稿一覧画面に遷移していることを確認する
-
-      # 送信した画像がブラウザに表示されていることを確認する
-
-    end
-
-    it 'テキストと画像の投稿に成功すること' do
-      # サインインする
-      sign_in(@room_user.user)
-
-      # 作成されたチャットルームへ遷移する
-      click_on(@room_user.room.name)
-
-      # 添付する画像を定義する
-      image_path = Rails.root.join('public/images/test_image.png')
-
-      # 画像選択フォームに画像を添付する
-
-      # 値をテキストフォームに入力する
-
-      # 送信した値がDBに保存されていることを確認する
-
-      # 送信した値がブラウザに表示されていることを確認する
-
-      # 送信した画像がブラウザに表示されていることを確認する
-
+      # コーヒー豆の登録ページにエラーメッセージが表示されていることを確認する
+      expect(page).to have_selector '#error-alert'
     end
   end
 end
