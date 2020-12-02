@@ -142,6 +142,7 @@ RSpec.describe 'コーヒー豆の削除機能', type: :system do
     # コーヒーをDBに保存する
     @coffee = FactoryBot.create(:coffee)
   end
+  
   context '削除に成功したとき' do
     it 'ログインしたユーザーは自分が登録したコーヒー情報の削除ができる' do
       # コーヒーを登録したユーザーでサインインする
