@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "コーヒー豆の登録機能", type: :system do
   before do
-    # ユーザーをDBに保存する
+    # ユーザーアカウントの生成
     @user = FactoryBot.create(:user)
 
     # フォームに入力する情報をインスタンス変数に代入
@@ -73,7 +73,8 @@ end
 RSpec.describe "コーヒー豆の編集機能", type: :system do
   before do
     # コーヒーをDBに保存する
-    @coffee = FactoryBot.create(:coffee)
+    @coffee1 = FactoryBot.create(:coffee)
+    @coffee2 = FactoryBot.create(:coffee)
 
     # 編集用情報をインスタンス変数に代入
     @name = Faker::Coffee.country
@@ -83,16 +84,66 @@ RSpec.describe "コーヒー豆の編集機能", type: :system do
 
   context '編集に成功したとき' do
     it 'ログインしたユーザーは自分が登録したコーヒー情報の編集ができる' do
-      # コーヒーを登録したユーザーでサインインする
-      sign_in(@coffee.user)
+      # コーヒー1を登録したユーザーでサインインする
+      sign_in(@coffee1.user)
 
       # 登録したコーヒーの画像内に「編集」ボタンがあることを確認する
       expect(
         all(".more")[0].hover
-      ).to have_link '編集', href: edit_coffee_path(@coffee)
+      ).to have_link '編集', href: edit_coffee_path(@coffee1)
  
       # コーヒー豆の編集ページへ遷移する
-      visit edit_coffee_path(@coffee)
+      visit edit_coffee_path(@coffee1)
+
+      # すでに登録済みの内容がフォームに入っていることを確認する
+      expect(
+        find('#name').value
+      ).to eq @coffee1.name
+      expect(
+        find('#country').value
+      ).to eq @coffee1.country.id.to_s
+      expect(
+        find('#coffee_date_of_purchase_1i').value
+      ).to eq @coffee1.date_of_purchase.year.to_s
+      expect(
+        find('#coffee_date_of_purchase_2i').value
+      ).to eq @coffee1.date_of_purchase.month.to_s
+      expect(
+        find('#coffee_date_of_purchase_3i').value
+      ).to eq @coffee1.date_of_purchase.day.to_s
+      expect(
+        find('#shop').value
+      ).to eq @coffee1.shop
+      expect(
+        find('#detail').value
+      ).to eq @coffee1.detail
+
+      # 登録内容を編集する
+      fill_in 'name', with: @name
+      fill_in 'shop', with: @shop
+      fill_in 'detail', with: @detail
+
+      # 編集してもCoffeeモデルのカウントは変わらないことを確認する
+      expect{
+        find('input[name="commit"]').click
+      }.to change { Coffee.count }.by(0)
+
+      # コーヒー一覧ページに遷移したことを確認する
+      expect(current_path).to eq coffees_path
+
+      # 一覧ページに先ほどの変更内容が含まれていることを確認する
+      expect(page).to have_content @name
+      expect(page).to have_content @shop
+    end
+  end
+  
+  context '編集に失敗したとき' do
+    it 'ログインしたユーザーは自分以外が登録したコーヒー情報の編集画面には遷移できない' do
+      # コーヒー1を登録したユーザーでサインインする
+      sign_in(@coffee1.user)
+
+      # コーヒー豆の編集ページへ遷移する
+      visit edit_coffee_path(@coffee2)
 
       # すでに登録済みの内容がフォームに入っていることを確認する
       expect(
@@ -135,6 +186,7 @@ RSpec.describe "コーヒー豆の編集機能", type: :system do
       expect(page).to have_content @shop
     end
   end
+
 end
 
 RSpec.describe 'コーヒー豆の削除機能', type: :system do
@@ -142,7 +194,7 @@ RSpec.describe 'コーヒー豆の削除機能', type: :system do
     # コーヒーをDBに保存する
     @coffee = FactoryBot.create(:coffee)
   end
-  
+
   context '削除に成功したとき' do
     it 'ログインしたユーザーは自分が登録したコーヒー情報の削除ができる' do
       # コーヒーを登録したユーザーでサインインする
