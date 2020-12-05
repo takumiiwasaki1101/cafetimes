@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "レビューの投稿機能", type: :system do
+RSpec.describe 'レビューの投稿機能', type: :system do
   before do
     # レビュー情報の投稿
     @coffee = FactoryBot.create(:coffee)
@@ -22,17 +22,17 @@ RSpec.describe "レビューの投稿機能", type: :system do
       expect(current_path).to eq coffees_path
 
       # 国旗マーク内のカーソルから「投稿」をクリックするとレビュー投稿画面へ遷移する
-      find(".more").hover
-      click_on "投稿"
+      find('.more').hover
+      click_on '投稿'
       expect(
         current_path
       ).to eq new_coffee_review_path(@coffee.id)
 
       # 値をテキストフォームに入力する
-      select '2020', from: "review_date_1i" 
-      select '12', from: "review_date_2i" 
-      select '10', from: "review_date_3i" 
-      select 'フレンチプレス', from: "tool-category" 
+      select '2020', from: 'review_date_1i'
+      select '12', from: 'review_date_2i'
+      select '10', from: 'review_date_3i'
+      select 'フレンチプレス', from: 'tool-category'
       fill_in 'amount-of-coffee', with: @amount_of_coffee
       fill_in 'amount-of-water', with: @amount_of_water
       fill_in 'pre-infusion-time', with: @pre_infusion_time
@@ -40,9 +40,9 @@ RSpec.describe "レビューの投稿機能", type: :system do
       fill_in 'review', with: @review
 
       # レビュー投稿をクリックすると、Reviewモデルのカウントが1上がることを確認する
-      expect{
+      expect  do
         find('input[name="commit"]').click
-      }.to change { Review.count }.by(1)
+      end.to change { Review.count }.by(1)
 
       # マイページにリダイレクトされることを確認する
       expect(current_path).to eq user_path(@coffee.user.id)
@@ -61,16 +61,16 @@ RSpec.describe "レビューの投稿機能", type: :system do
       expect(current_path).to eq coffees_path
 
       # 国旗マーク内のカーソルから「投稿」をクリックするとレビュー投稿画面へ遷移する
-      find(".more").hover
-      click_on "投稿"
+      find('.more').hover
+      click_on '投稿'
       expect(
         current_path
       ).to eq new_coffee_review_path(@coffee.id)
 
       # 必須フォームに入力をしていない状態で、レビューの投稿をクリックしてもReviewモデルのカウントは上がらない
-      expect{
+      expect  do
         find('input[name="commit"]').click
-      }.not_to change { Review.count }
+      end.not_to change { Review.count }
 
       # レビューの投稿ページに戻ってくることを確認する
       expect(current_path).to eq coffee_reviews_path(@coffee.id)

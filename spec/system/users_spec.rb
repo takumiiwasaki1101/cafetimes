@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "ユーザーの新規登録機能", type: :system do
+RSpec.describe 'ユーザーの新規登録機能', type: :system do
   before do
     # ユーザー情報の生成
     @user = FactoryBot.build(:user)
@@ -24,22 +24,22 @@ RSpec.describe "ユーザーの新規登録機能", type: :system do
       fill_in 'password-confirmation', with: @user.password
 
       # 会員登録ボタンを押すとユーザーモデルのカウントが1上がることを確認する
-      expect{
+      expect  do
         find('input[name="commit"]').click
-      }.to change { User.count }.by(1)
+      end.to change { User.count }.by(1)
 
       # coffees#indexページへ遷移したことを確認する
       expect(current_path).to eq coffees_path
 
       # カーソルを合わせると各種ページへのリンクが表示されることを確認する
       expect(
-        all("ul")[1].hover
+        all('ul')[1].hover
       ).to have_link('マイページ')
       expect(
-        all("ul")[1].hover
+        all('ul')[1].hover
       ).to have_link('利用者一覧')
       expect(
-        all("ul")[1].hover
+        all('ul')[1].hover
       ).to have_link('ログアウト')
 
       # サインアップページへ遷移するボタンや、ログインページへ遷移するボタンが表示されていないことを確認する
@@ -60,18 +60,18 @@ RSpec.describe "ユーザーの新規登録機能", type: :system do
       visit new_user_registration_path
 
       # ユーザー情報を入力する
-      fill_in 'nickname', with: ""
-      fill_in 'email', with: ""
-      fill_in 'password', with: ""
-      fill_in 'password-confirmation', with: ""
+      fill_in 'nickname', with: ''
+      fill_in 'email', with: ''
+      fill_in 'password', with: ''
+      fill_in 'password-confirmation', with: ''
 
       # 会員登録ボタンを押してもユーザーモデルのカウントは上がらないことを確認する
-      expect{
+      expect  do
         find('input[name="commit"]').click
-      }.not_to change { User.count }
+      end.not_to change { User.count }
 
       # 新規登録ページへ戻されることを確認する
-      expect(current_path).to eq "/users"
+      expect(current_path).to eq '/users'
 
       # 新規登録ページにエラーメッセージが表示されていることを確認する
       expect(page).to have_selector '#error-alert'
@@ -79,13 +79,13 @@ RSpec.describe "ユーザーの新規登録機能", type: :system do
   end
 end
 
-RSpec.describe "ユーザーのログイン機能", type: :system do
+RSpec.describe 'ユーザーのログイン機能', type: :system do
   before do
     # ユーザー情報の登録
     @user = FactoryBot.create(:user)
   end
 
-  context 'ユーザーログイン成功' do  
+  context 'ユーザーログイン成功' do
     it 'ログインに成功し、coffees#indexページに遷移する' do
       # トップページに遷移する
       visit root_path
@@ -95,20 +95,20 @@ RSpec.describe "ユーザーのログイン機能", type: :system do
 
       # ログインページへ遷移する
       visit new_user_session_path
-      
+
       # すでに保存されているユーザーのemailとpasswordを入力する
       fill_in 'email', with: @user.email
       fill_in 'password', with: @user.password
 
       # ログインボタンをクリックする
-      click_on("commit")
+      click_on('commit')
 
       # coffees#indexページに遷移していることを確認する
       expect(current_path).to eq coffees_path
     end
   end
 
-  context 'ユーザーログイン失敗' do  
+  context 'ユーザーログイン失敗' do
     it 'ログインに失敗し、再びサインインページに戻ってくる' do
       # トップページに遷移する
       visit root_path
@@ -120,11 +120,11 @@ RSpec.describe "ユーザーのログイン機能", type: :system do
       visit new_user_session_path
 
       # 誤ったユーザー情報を入力する
-      fill_in 'email', with: "test"
-      fill_in 'password', with: "hoge"
+      fill_in 'email', with: 'test'
+      fill_in 'password', with: 'hoge'
 
       # ログインボタンをクリックする
-      click_on("commit")
+      click_on('commit')
 
       # ログインページに戻ってきていることを確認する
       expect(current_path).to eq new_user_session_path
