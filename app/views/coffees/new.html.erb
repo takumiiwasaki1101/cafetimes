@@ -26,7 +26,7 @@
         <label class="form-text">原産国</label>
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:country_id, Country.all, :id, :name, {}, {class:"input-default", id:"item-category"}) %>
+      <%= f.collection_select(:country_id, Country.all, :id, :name, {}, {class:"input-default", id:"country"}) %>
     </div>
     <div class="form-group">
       <div class='form-text-wrap'>

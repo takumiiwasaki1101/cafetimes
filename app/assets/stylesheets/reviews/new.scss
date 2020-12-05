@@ -1,11 +1,6 @@
-/* 販売価格 */
-.sell-price {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
+/* レビュー投稿 */
 
-.price-content {
+.numerical-information {
   border-bottom: 1px solid #ccc;
   padding: 10px;
   display: flex;
@@ -13,18 +8,18 @@
   justify-content: space-between;
 }
 
-.price-text {
+.numerical-text {
   /* min-width: 170px; */
   display: flex;
   align-items: center;
   width: 60%;
 }
 
-.sell-yen {
+.unit {
   font-size: 18px;
 }
 
-.price-input {
+.numerical-input {
   height: 30px;
   text-align: right;
   padding-right: 10px;

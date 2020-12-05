@@ -5,7 +5,7 @@
   <div class='form-header'>
     <h1 class='form-header-text'>
       <% if @user.id == current_user.id %>
-        まずは<%= link_to 'コーヒー豆の登録', new_coffee_path ,  class: "logout" %>を行いましょう！
+        まずは<%= link_to 'コーヒー豆の登録', new_coffee_path ,  class: "coffee-registration" %>を行いましょう！
       <% else %>
         <%= @user.nickname %>さんのレビューはまだありません
       <% end %>
