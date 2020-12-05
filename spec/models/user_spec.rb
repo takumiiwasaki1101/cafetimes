@@ -83,7 +83,7 @@ RSpec.describe User, type: :model do
       end
       # パスワードの不一致の場合は登録できないことを確認
 
-      # パスワードは半角英数字混合が必須であることを確認
+      # パスワードは半角英数字混合が※であることを確認
       it 'passwordが半角数字のみであれば登録できないこと' do
         @user.password = '123456'
         @user.password_confirmation = '123456'
@@ -97,7 +97,7 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('パスワードは英数字混合で入力してください')
       end
-      # /パスワードは半角英数字混合が必須であることを確認
+      # /パスワードは半角英数字混合が※であることを確認
     end
   end
 end
