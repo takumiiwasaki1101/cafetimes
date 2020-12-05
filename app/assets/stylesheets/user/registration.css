@@ -108,6 +108,10 @@
   font-weight: bold;
 }
 
+.indispensable{
+  color: crimson;
+}
+
 .input-default {
   width: 100%;
   margin-top: 5px;

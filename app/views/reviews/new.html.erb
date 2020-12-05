@@ -21,7 +21,7 @@
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">飲んだ日</label>
-        <span class="indispensable">必須</span>
+        <span class="indispensable">※</span>
       </div>
       <div class='input-birth-wrap'>
         <%= raw sprintf(
@@ -40,7 +40,7 @@
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">抽出器具</label>
-        <span class="indispensable">任意</span>
+        <span class="optional">任意</span>
       </div>
       <%= f.collection_select(:tool_id, Tool.all, :id, :name, {}, {class:"input-default", id:"tool-category"}) %>
     </div>
@@ -49,7 +49,7 @@
     <div class="form-group">
       <div class="form-text-wrap">
         <label class="form-text">各種数値</label>
-        <span class="indispensable">任意</span>
+        <span class="optional">任意</span>
       </div>
       <div>
         <div class="numerical-information">
@@ -87,6 +87,7 @@
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">レビュー</label>
+        <span class="indispensable">※</span>
       </div>
       <%= f.text_area :review, class:"input-long", id:"review", placeholder:"飲んだ感想を書いてみよう。" , rows:"7",maxlength:"1000" %>
     </div>
