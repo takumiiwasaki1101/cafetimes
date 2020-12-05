@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "ユーザー新規登録機能", type: :system do
+RSpec.describe "ユーザーの新規登録機能", type: :system do
   before do
     # ユーザー情報の生成
     @user = FactoryBot.build(:user)
@@ -79,7 +79,7 @@ RSpec.describe "ユーザー新規登録機能", type: :system do
   end
 end
 
-RSpec.describe "ユーザーログイン機能", type: :system do
+RSpec.describe "ユーザーのログイン機能", type: :system do
   before do
     # ユーザー情報の登録
     @user = FactoryBot.create(:user)
