@@ -68,7 +68,7 @@ RSpec.describe "ユーザーの新規登録機能", type: :system do
       # 会員登録ボタンを押してもユーザーモデルのカウントは上がらないことを確認する
       expect{
         find('input[name="commit"]').click
-      }.to change { User.count }.by(0)
+      }.not_to change { User.count }
 
       # 新規登録ページへ戻されることを確認する
       expect(current_path).to eq "/users"
