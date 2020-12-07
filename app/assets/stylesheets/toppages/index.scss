@@ -34,11 +34,11 @@ a {
 /* //画面上部の「コーヒー体験をレビューしよう」帯部分 */
 
 /* CafeTimesの活用法 */
-.select-reason-contents {
+.how-to-use {
   padding: 5vh 15vw;
 }
 
-.select-reason-contents>.title {
+.how-to-use >.title {
   text-align: center;
   font-size: 3.5vh;
   font-weight: bold;
@@ -46,7 +46,7 @@ a {
   position: relative;
 }
 
-.select-reason-contents>.title::after {
+.how-to-use >.title::after {
   content: '';
   width: 70px;
   height: 4px;
@@ -57,13 +57,13 @@ a {
   transform: translateX(-50%);
 }
 
-.reason-lists {
+.use-lists {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.reason-lists>.list {
+.use-lists > .list {
   width: 33vh;
   display: flex;
   flex-direction: column;
@@ -76,7 +76,7 @@ a {
   width: 100%;
 }
 
-.reason-list-number {
+.use-list-number {
   position: absolute;
   top: 0;
   left: 0;
@@ -89,17 +89,17 @@ a {
   color: #fff;
 }
 
-.reason-list-text {
+.use-list-text {
   font-weight: bold;
   font-size: 24px;
   line-height: 50px;
 }
 
-.reason-list-blue-text {
+.use-list-blue-text {
   color: #3ccace;
 }
 
-.reason-list-description {
+.use-list-description {
   font-size: 18px;
   margin-top: 20px;
 }
@@ -110,7 +110,7 @@ a {
   background-color: #FFF;
   display: flex;
   flex-direction: column;
-  padding: 10vh 5vh;
+  padding: 5vh;
 }
 
 .review-contents > .title {
@@ -118,6 +118,14 @@ a {
   font-size: 3.5vh;
   font-weight: bold;
   margin-bottom: 5vh;
+  position: relative;
+}
+
+.review-contents > .end {
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: bold;
+  margin-top: 5vh;
   position: relative;
 }
 
@@ -133,6 +141,7 @@ a {
   height: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 1vh;
 }
 
 .form-wrap-top {
@@ -149,17 +158,21 @@ a {
  @media (max-width: 1024px){
 
   .review-contents {
-    padding: 10vh 30vh;
+    padding: 5vh 30vh;
   }
   .review-main {
     width: 100%;
     margin-bottom: 25px;
   }
-}
+
+  .use-lists > .list {
+    width: 100vh;
+  }
+ }
 
 @media (max-width: 599px){
 
   .review-contents {
-    padding: 10vh 0;
+    padding: 5vh 0;
   }
 }
