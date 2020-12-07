@@ -1,11 +1,10 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
   before_action :set_coffee, only: [:new, :create]
   before_action :move_to_coffees_path, only: [:new, :create]
 
   def index
-    # @coffees = Coffee.where(user_id: current_user.id).order('created_at DESC')
-    # @coffees = Coffee.includes(:user).where(user_id: current_user.id).order("created_at DESC").references(:user)
+    @reviews = Review.includes(:coffee, :user).order('created_at DESC')
   end
 
   def new
