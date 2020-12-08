@@ -154,9 +154,23 @@ a {
 /* //ユーザー投稿一覧 */
 
 
- /* タブレット・スマホ表示時 */
+/* タブレット・スマホ表示時 */
  @media (max-width: 1024px){
+ 
+/* CafeTimesの活用法 */
+  .list-pict {
+    margin-bottom:  0px;
+  }
 
+  .use-list-description {
+    margin-top: 0px;
+    margin-bottom: 30px;
+  }
+
+/* //CafeTimesの活用法 */
+
+
+/* ユーザー投稿一覧 */
   .review-contents {
     padding: 5vh 15vh;
   }
@@ -168,7 +182,9 @@ a {
   .use-lists > .list {
     width: 100vh;
   }
- }
+/* //ユーザー投稿一覧 */
+
+}
 
 @media (max-width: 599px){
 
