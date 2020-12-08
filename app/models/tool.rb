@@ -10,6 +10,6 @@ class Tool < ActiveHash::Base
     { id: 7,  name: 'サイフォン' },
     { id: 8,  name: 'ウォータードリップ' },
     { id: 9,  name: 'エスプレッソマシン' },
-    { id: 10,  name: '直火式エスプレッソ' },
+    { id: 10, name: '直火式エスプレッソ' }
   ]
 end
