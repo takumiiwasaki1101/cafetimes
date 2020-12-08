@@ -6,7 +6,7 @@ class Country < ActiveHash::Base
     { id: 3,  name: 'インドネシア', area: 'アジア', image: '/assets/countries/Indonesia.png' },
     { id: 4,  name: 'インド', area: 'アジア', image: '/assets/countries/India.png' },
     { id: 5,  name: 'イエメン', area: 'アジア', image: '/assets/countries/Yemen.png' },
-    { id: 6,  name: 'エチオピア', area: 'アフリカ', image: '/assets/countries/Ethiopia.png' },
+    { id: 6,  name: 'エチオピア', area: 'アフリカ', image: '/assets/countries/Ethiopia-1387b19c176f32402931a3a1412d63487033ab61053db2a5a777272ad279a751.png' },
     { id: 7,  name: 'ルワンダ', area: 'アフリカ', image: '/assets/countries/Rwanda.png' },
     { id: 8,  name: 'ケニア', area: 'アフリカ', image: '/assets/countries/Kenya.png' },
     { id: 9,  name: 'タンザニア', area: 'アフリカ', image: '/assets/countries/Tanzania.png' },
