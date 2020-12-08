@@ -58,11 +58,13 @@
 <%# CafeTimesの3つの活用法 %>
 
 <%# レビューの一覧 %>
-<div class='review-contents'>
-  <h2 class='title'>ユーザー投稿一覧</h2>
-  <div class="review__wrapper">
-    <%= render "shared/reviews" %>
+<% if @reviews.size != 0 %>
+  <div class='review-contents'>
+    <h2 class='title'>ユーザー投稿一覧</h2>
+    <div class="review__wrapper">
+      <%= render "shared/reviews" %>
+    </div>
+    <%= link_to "投稿をもっと見る" , reviews_path, class: "end" %>
   </div>
-  <%= link_to "投稿をもっと見る" , reviews_path, class: "end" %>
-</div>
+<% end %>
 <%# //レビューの一覧 %>
