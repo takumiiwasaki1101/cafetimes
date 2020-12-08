@@ -14,7 +14,7 @@
 }
 
 .form-wrap-show {
-  width: 60%;
+  width: 80%;
   background-color: white;
   margin-top: 10px;
 }
@@ -245,11 +245,8 @@
   }
   .form-wrap-show {
     width: 95%;
-  }
-
+  }  
   .form-header-text-review span{
     left: 0px;
-  }
-  
+  }  
 }
-
