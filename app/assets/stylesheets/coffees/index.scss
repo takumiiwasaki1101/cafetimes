@@ -38,6 +38,13 @@
   text-shadow: none
 }
 
+.card p span.output-data{
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  width: 200px;
+}
+
 .card .more {
   position: absolute;
   cursor: pointer;
