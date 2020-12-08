@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: cafetimes_production
-  username: cafetimes
-  password: <%= ENV['CAFETIMES_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
