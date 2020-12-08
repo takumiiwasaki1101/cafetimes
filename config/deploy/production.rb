@@ -58,4 +58,3 @@ server "54.178.88.47",
   #   forward_agent: false,
   #   auth_methods: %w(publickey password)
     # password: "please use keys"
-  }
