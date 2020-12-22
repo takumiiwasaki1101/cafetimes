@@ -9,6 +9,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @coffees = Coffee.where(user_id: @user.id)
     @coffee  = Coffee.where(user_id: @user.id).order('created_at DESC').first
-    @reviews = Review.where(user_id: @user.id).includes(:coffee).order('created_at DESC')
+    @reviews = Review.where(user_id: @user.id).includes(:coffee).order('date DESC')
   end
 end

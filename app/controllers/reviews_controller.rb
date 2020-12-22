@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
   before_action :move_to_coffees_path, only: [:new, :create]
 
   def index
-    @reviews = Review.includes(:coffee, :user).order('created_at DESC')
+    @reviews = Review.includes(:coffee, :user).order('date DESC')
   end
 
   def new

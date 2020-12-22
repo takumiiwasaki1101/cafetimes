@@ -4,7 +4,7 @@ class CoffeesController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @coffees = Coffee.where(user_id: current_user.id).order('created_at DESC')
+    @coffees = Coffee.where(user_id: current_user.id).order('date_of_purchase DESC')
   end
 
   def show
