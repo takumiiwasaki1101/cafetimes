@@ -1,5 +1,5 @@
 class ToppagesController < ApplicationController
   def index
-    @reviews = Review.includes(:coffee, :user).order('created_at DESC').limit(6)
+    @reviews = Review.includes(:coffee, :user).order('date DESC').limit(4)
   end
 end
