@@ -1,5 +1,6 @@
 <% @coffee.reviews.each_with_index do |review, i| %>
   <div class="form-group-coffees-show">
+    <%= link_to "",review_path(review.id) %>
     <div class='form-text-wrap'>
       <label class="form-text"><%= i + 1%>回目</label>
     </div>
