@@ -19,6 +19,12 @@
   margin-top: 10px;
 }
 
+.title {
+  line-height: 80px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .form-header {
   width: 100%;
   height: 120px;
@@ -32,6 +38,7 @@
 .form-header-text {
   line-height: 120px;
   font-weight: bold;
+  text-align: center;
 }
 
 .form-header-text-review {
