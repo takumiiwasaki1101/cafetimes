@@ -113,6 +113,13 @@ a {
   padding: 0 15vh;
 }
 
+.review-contents-show {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  padding: 0 25vh;
+}
+
 .review-contents > .title {
   text-align: center;
   font-size: 3.5vh;
@@ -138,6 +145,13 @@ a {
 
 .review-main {
   width: calc((100% - 25px) / 2);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1vh;
+}
+
+.review-main-show {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -190,6 +204,13 @@ a {
   }
 /* //ユーザー投稿一覧 */
 
+/* 投稿詳細 */
+.review-contents-show {
+  padding: 0 10vh;
+}
+/* //投稿詳細 */
+
+
 }
 
 @media (max-width: 599px){
@@ -197,4 +218,11 @@ a {
   .review-contents {
     padding: 5vh 0;
   }
+
+  /* 投稿詳細 */
+  .review-contents-show {
+    padding: 0;
+  }
+  /* //投稿詳細 */
+
 }
