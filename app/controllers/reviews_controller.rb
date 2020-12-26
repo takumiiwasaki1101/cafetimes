@@ -25,10 +25,29 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @review = Review.find(params[:id])
+    @coffee = Coffee.find(@review.coffee.id)
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    @coffee = Coffee.find(@review.coffee.id)
+    if @review.update(update_params)
+      redirect_to user_path(current_user.id)
+    else
+      render action: 'edit'    # バリデーションに弾かれた時
+    end
+  end
+
   private
 
   def review_params
     params.require(:review).permit(:date, :tool_id, :amount_of_coffee, :amount_of_water, :pre_infusion_time, :extraction_time, :review).merge(user_id: current_user.id, coffee_id: params[:coffee_id])
+  end
+
+  def update_params
+    params.require(:review).permit(:date, :tool_id, :amount_of_coffee, :amount_of_water, :pre_infusion_time, :extraction_time, :review).merge(user_id: current_user.id, coffee_id: @coffee.id)
   end
 
   def set_coffee

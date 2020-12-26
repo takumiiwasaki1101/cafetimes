@@ -51,6 +51,16 @@
         <label class="form-text">レビュー</label>
         <div class="input-long-coffees-show"><%= @review.review %></div>
       </div>
+
+      <%# 編集・削除ボタンへのリンク（カレントユーザー時のみ表示） %>
+      <% if user_signed_in? && current_user.id == @review.user_id %>
+        <div class="button-unit">
+          <%= link_to "編集" , edit_coffee_review_path(@review.id) , class: "button" %>
+          <%= link_to "削除" , edit_coffee_review_path(@review.id) , class: "button" %>
+        </div>
+      <% end %>
+      <%# //編集・削除ボタンへのリンク（カレントユーザー時のみ表示） %>
+
     </div>
   </div>
 </div>
