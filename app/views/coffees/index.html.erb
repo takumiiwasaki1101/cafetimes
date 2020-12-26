@@ -1,5 +1,11 @@
 <%= render "shared/header"%>
 
+<%# ページタイトル %>
+  <h1 class='title'>
+    コーヒー豆の一覧
+  </h1>
+<%# //ページタイトル %>
+
 <%# コーヒー豆未登録時の表示 %>
 <% if @coffees.size == 0 %>
   <div class='form-header'>

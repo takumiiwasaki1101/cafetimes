@@ -1,5 +1,11 @@
 <%= render "shared/header" %>
 
+<%# ページタイトル %>
+  <h1 class='title'>
+    <%= @user.nickname %>さんのマイページ
+  </h1>
+<%# //ページタイトル %>
+
 <%# 未投稿時のメッセージ %>
 <% if @coffees.size == 0 %>
   <div class='form-header'>

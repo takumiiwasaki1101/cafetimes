@@ -1,0 +1,56 @@
+<div class='review-main'>
+  <div class='form-wrap-top'>
+    <div class='form-header' style="background-image: url('<%= @review.coffee.country.image %>');">
+      <h1 class='form-header-text-review'>
+        <span class='first'>ユーザー:<%= @review.user.nickname %></span>      
+        <span class='second'>銘柄:<%= @review.coffee.name %></span>      
+        <span class='third'>原産国:<%= @review.coffee.country.name %></span>      
+        <span class='fourth'>購入店:<%= @review.coffee.shop %></span>      
+      </h1>
+    </div>
+    <div class="form-group-coffees-show">
+      <div class='form-text-wrap'>
+        <label class="form-text">飲んだ日</label>
+        <span><%= @review.date %></span>
+      </div>
+
+      <%# 任意項目の表示（未登録なら非表示） %>
+      <% if @review.tool.id != 0 %>
+        <div class='form-text-wrap'>
+          <label class="form-text">抽出器具</label>
+          <span><%= @review.tool.name %></span>
+        </div>
+      <% end %>
+      <% if @review.amount_of_coffee != nil %>
+        <div class='form-text-wrap'>
+          <label class="form-text">コーヒー豆の量</label>
+          <span><%= @review.amount_of_coffee %>g</span>
+        </div>
+      <% end %>
+      <% if @review.amount_of_water != nil%>
+        <div class='form-text-wrap'>
+          <label class="form-text">お湯の量</label>
+          <span><%= @review.amount_of_water %>ml</span>
+        </div>
+      <% end %>
+      <% if @review.pre_infusion_time != nil%>
+        <div class='form-text-wrap'>
+          <label class="form-text">蒸らし時間</label>
+          <span><%= @review.pre_infusion_time %>秒</span>
+        </div>
+      <% end %>
+      <% if @review.extraction_time != nil%>
+        <div class='form-text-wrap'>
+          <label class="form-text">抽出時間</label>
+          <span><%= @review.extraction_time %>秒</span>
+        </div>
+      <% end %>
+      <%# //任意項目の表示（未登録なら非表示） %>
+      
+      <div class='form-text-wrap'>
+        <label class="form-text">レビュー</label>
+        <div class="input-long-coffees-show"><%= @review.review %></div>
+      </div>
+    </div>
+  </div>
+</div>

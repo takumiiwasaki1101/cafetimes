@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index,:show]
   before_action :set_coffee, only: [:new, :create]
   before_action :move_to_coffees_path, only: [:new, :create]
 
@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @reviews = Review.find(params[:id])
+    @review = Review.find(params[:id])
   end
 
   def new

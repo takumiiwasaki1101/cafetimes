@@ -1,5 +1,12 @@
 <%= render "shared/header" %>
 
+<%# ページタイトル %>
+<h1 class='title'>
+  ユーザー一覧
+</h1>
+<%# //ページタイトル %>
+
+<%# ユーザー一覧 %>
 <div class="inner">
   <div class="card__wrapper">
     <% @users.each do |user| %>
@@ -14,3 +21,4 @@
     <% end %>
   </div>
 </div>
+<%# //ユーザー一覧 %>
