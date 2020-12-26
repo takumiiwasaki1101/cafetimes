@@ -7,6 +7,10 @@ class ReviewsController < ApplicationController
     @reviews = Review.includes(:coffee, :user).order('date DESC')
   end
 
+  def show
+    @reviews = Review.find(params[:id])
+  end
+
   def new
     @review = Review.new
   end
