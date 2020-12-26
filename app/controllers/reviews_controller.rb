@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, except: [:index,:show]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_coffee, only: [:new, :create]
   before_action :move_to_coffees_path, only: [:new, :create]
 
@@ -38,6 +38,12 @@ class ReviewsController < ApplicationController
     else
       render action: 'edit'    # バリデーションに弾かれた時
     end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @coffee = Coffee.find(@review.coffee.id)
+    redirect_to user_path(current_user.id) if @review.destroy
   end
 
   private
