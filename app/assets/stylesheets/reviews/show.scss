@@ -1,0 +1,16 @@
+.button-unit {
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+a.button {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 2px 14px;
+  text-align: center;
+  color: #666;
+  background-color: aliceblue;
+}

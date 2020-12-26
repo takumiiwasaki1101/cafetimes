@@ -101,7 +101,7 @@
   position: relative;
 }
 
-.form-group-coffees-show a {
+.form-group-coffees-show a.to-show {
   position: absolute;
   top: 0;
   left: 0;
