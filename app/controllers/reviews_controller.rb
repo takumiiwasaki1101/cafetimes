@@ -40,6 +40,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review = Review.find(params[:id])
+    @coffee = Coffee.find(@review.coffee.id)
+    redirect_to user_path(current_user.id) if @review.destroy
+  end
+
   private
 
   def review_params
