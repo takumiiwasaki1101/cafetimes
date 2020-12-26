@@ -1,7 +1,7 @@
 <% @reviews.each do |review| %>
   <div class='review-main'>
+    <%= link_to "",review_path(review.id), class: "to-show" %>
     <div class='form-wrap-top'>
-      <%= link_to "",review_path(review.id), class: "to-show" %>
       <div class='form-header' style="background-image: url('<%= review.coffee.country.image %>');">
         <h1 class='form-header-text-review'>
           <span class='first'>ユーザー:<%= review.user.nickname %></span>      
