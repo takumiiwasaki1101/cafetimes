@@ -208,10 +208,14 @@ a.to-show{
 
 /* 投稿詳細 */
 .review-contents-show {
-  padding: 0 10vh;
+  padding: 0 ;
 }
 /* //投稿詳細 */
 
+.review-main-show {
+  width: 100%;
+  margin-bottom: 25px;
+}
 
 }
 
@@ -220,11 +224,4 @@ a.to-show{
   .review-contents {
     padding: 5vh 0;
   }
-
-  /* 投稿詳細 */
-  .review-contents-show {
-    padding: 0;
-  }
-  /* //投稿詳細 */
-
 }
