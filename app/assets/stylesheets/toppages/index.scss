@@ -110,7 +110,7 @@ a {
   background-color: #FFF;
   display: flex;
   flex-direction: column;
-  padding: 5vh;
+  padding: 0 15vh;
 }
 
 .review-contents > .title {
@@ -180,9 +180,6 @@ a {
 
 
 /* ユーザー投稿一覧 */
-  .review-contents {
-    padding: 5vh 15vh;
-  }
   .review-main {
     width: 100%;
     margin-bottom: 25px;
