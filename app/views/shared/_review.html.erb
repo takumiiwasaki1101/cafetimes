@@ -51,6 +51,10 @@
         <label class="form-text">レビュー</label>
         <div class="input-long-coffees-show"><%= @review.review %></div>
       </div>
+      <div class="button-unit">
+        <%= link_to "編集" , edit_coffee_review_path(@review.id) , class: "button" %>
+        <%= link_to "削除" , edit_coffee_review_path(@review.id) , class: "button" %>
+      </div>
     </div>
   </div>
 </div>
