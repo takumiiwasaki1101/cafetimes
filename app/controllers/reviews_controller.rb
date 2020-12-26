@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, except: [:index,:show]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_coffee, only: [:new, :create]
   before_action :move_to_coffees_path, only: [:new, :create]
 
