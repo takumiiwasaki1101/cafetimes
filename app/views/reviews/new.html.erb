@@ -56,28 +56,28 @@
           <div class="numerical-text">
             <span>コーヒー豆の量</span>
           </div>
-          <%= f.text_field :amount_of_coffee, class:"numerical-input", id:"amount-of-coffee", placeholder:"20" %>
+          <%= f.number_field :amount_of_coffee, class:"numerical-input", id:"amount-of-coffee", placeholder:"20" %>
           <span class="unit">g</span>
         </div>
         <div class="numerical-information">
           <div class="numerical-text">
             <span>お湯の量</span>
           </div>
-          <%= f.text_field :amount_of_water, class:"numerical-input", id:"amount-of-water", placeholder:"350" %>
+          <%= f.number_field :amount_of_water, class:"numerical-input", id:"amount-of-water", placeholder:"350" %>
           <span class="unit">ml</span>
         </div>
         <div class="numerical-information">
           <div class="numerical-text">
             <span>蒸らし時間</span>
           </div>
-          <%= f.text_field :pre_infusion_time, class:"numerical-input", id:"pre-infusion-time", placeholder:"60" %>
+          <%= f.number_field :pre_infusion_time, class:"numerical-input", id:"pre-infusion-time", placeholder:"60" %>
           <span class="unit">秒</span>
         </div>
         <div class="numerical-information">
           <div class="numerical-text">
             <span>抽出時間</span>
           </div>
-          <%= f.text_field :extraction_time, class:"numerical-input", id:"extraction-time", placeholder:"180" %>
+          <%= f.number_field :extraction_time, class:"numerical-input", id:"extraction-time", placeholder:"180" %>
           <span class="unit">秒</span>
         </div>
       </div>
