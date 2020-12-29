@@ -2,10 +2,22 @@
   <div class='form-wrap-top'>
     <div class='form-header' style="background-image: url('<%= @review.coffee.country.image %>');">
       <h1 class='form-header-text-review'>
-        <span class='first'>ユーザー:<%= @review.user.nickname %></span>      
-        <span class='second'>銘柄:<%= @review.coffee.name %></span>      
-        <span class='third'>原産国:<%= @review.coffee.country.name %></span>      
-        <span class='fourth'>購入店:<%= @review.coffee.shop %></span>      
+        <div class='line'>
+          <label class='title'>ユーザー</label>
+          <span class='output'>:<%= @review.user.nickname %></span>
+        </div>      
+        <div class='line'>
+          <label class='title'>銘柄</label>
+          <span class='output'>:<%= @review.coffee.name %></span>
+        </div>      
+        <div class='line'>
+          <label class='title'>原産国</label>
+          <span class='output'>:<%= @review.coffee.country.name %></span>
+        </div>      
+        <div class='line'>
+          <label class='title'>購入店</label>
+          <span class='output'>:<%= @review.coffee.shop %></span>
+        </div>      
       </h1>
     </div>
     <div class="form-group-coffees-show">

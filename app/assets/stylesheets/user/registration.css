@@ -19,7 +19,7 @@
   margin-top: 10px;
 }
 
-.title {
+.page-title {
   line-height: 80px;
   font-weight: bold;
   text-align: center;
@@ -28,7 +28,6 @@
 .form-header {
   width: 100%;
   height: 120px;
-  text-align: center;
   font-size: 22px;
   background-size: contain;
   background-position: right;
@@ -42,12 +41,19 @@
 }
 
 .form-header-text-review {
-  line-height: auto;
   font-weight: bold;
   position: relative;
+  top: 10px;
+  left: 30px;
+  font-size: 18px;
 }
 
-.form-header-text-review span{
+.title {
+  display: inline-block;
+  width: 100px;
+}
+
+/* .form-header-text-review span{
   display: block;
   line-height: 30px;
   position: absolute;
@@ -68,6 +74,11 @@
 
 .form-header-text-review span.fourth{
   top:  95px
+} */
+
+.line {
+  height: 20px;
+  margin-bottom: 5px;
 }
 
 .form-group {
@@ -259,12 +270,18 @@
   .form-wrap-show {
     width: 95%;
   }  
-  .form-header-text-review span{
-    left: 0px;
+
+  .form-header-text-review {
+    left: 5px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 180px;
+    width: 240px;
     text-align: left;
   }  
+
+  .title {
+    width: 80px;
+  }
+  
 }
