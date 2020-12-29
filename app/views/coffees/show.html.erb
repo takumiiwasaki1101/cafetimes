@@ -4,7 +4,7 @@
   <div class='form-wrap-show'>
 
   <%# ページタイトル %>
-    <h1 class='title'>
+    <h1 class='page-title'>
       コーヒー豆詳細
     </h1>
   <%# //ページタイトル %>
@@ -12,10 +12,22 @@
   <%# 該当コーヒー情報の表示 %>
     <div class='form-header' style="background-image: url('<%= @coffee.country.image %>');">
       <h1 class='form-header-text-review'>
-        <span class='first'>銘柄:<%= @coffee.name %></span>      
-        <span class='second'>原産国:<%= @coffee.country.name %></span>      
-        <span class='third'>購入日:<%= @coffee.date_of_purchase %></span>      
-        <span class='fourth'>購入店:<%= @coffee.shop %></span>      
+        <div class='line'>
+          <label class='title'>ユーザー</label>
+          <span class='output'>:<%= @coffee.user.nickname %></span>
+        </div>      
+        <div class='line'>
+          <label class='title'>銘柄</label>
+          <span class='output'>:<%= @coffee.name %></span>
+        </div>      
+        <div class='line'>
+          <label class='title'>原産国</label>
+          <span class='output'>:<%= @coffee.country.name %></span>
+        </div>      
+        <div class='line'>
+          <label class='title'>購入店</label>
+          <span class='output'>:<%= @coffee.shop %></span>
+        </div>      
       </h1>
     </div>
   <%# //該当コーヒー情報の表示 %>
