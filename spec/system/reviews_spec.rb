@@ -139,12 +139,25 @@ RSpec.describe 'レビューの編集機能', type: :system do
 
   context 'レビュー編集失敗' do
     it 'ログインしたユーザーは自分以外が登録したレビュー情報の編集画面には遷移できない' do
-      # コーヒー1を登録したユーザーでログインする
+      # レビュー1を登録したユーザーでログインする
       sign_in(@review1.user)
 
-      # 自身の登録したレビュー以外の編集ページへアクセスしてもマイレビューへリダイレクトされる
-      visit edit_coffee_review_path(@review2)
-      expect(current_path).to eq user_path(@review1.user.id)
+      # ログイン後のヘッダーの名前にカーソルを移動すると「利用者一覧」ボタンがあることを確認する
+      expect(
+        all('ul')[1].hover
+      ).to have_link('利用者一覧')
+
+      # 利用者一覧へ遷移する
+      visit users_path
+
+      # レビュー2を登録したユーザーのマイレビューへ遷移する
+      click_on @review2.user.nickname
+
+      # ページ下部に「編集」ボタンがないことを確認する
+      expect(
+        page
+      ).to have_no_link '編集'
+
     end
   end
 end
