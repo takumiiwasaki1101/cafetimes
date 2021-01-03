@@ -53,29 +53,6 @@
   width: 100px;
 }
 
-/* .form-header-text-review span{
-  display: block;
-  line-height: 30px;
-  position: absolute;
-  left: 42px;
-}
-
-.form-header-text-review span.first{
-  top:  5px
-}
-
-.form-header-text-review span.second{
-  top:  35px
-}
-
-.form-header-text-review span.third{
-  top:  65px
-}
-
-.form-header-text-review span.fourth{
-  top:  95px
-} */
-
 .line {
   height: 20px;
   margin-bottom: 5px;
@@ -276,7 +253,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 240px;
+    width: 170px;
     text-align: left;
     font-size: 14px;
   }  
