@@ -34,7 +34,7 @@ RSpec.describe 'ユーザーの新規登録機能', type: :system do
       # カーソルを合わせると各種ページへのリンクが表示されることを確認する
       expect(
         all('ul')[1].hover
-      ).to have_link('マイページ')
+      ).to have_link('マイレビュー')
       expect(
         all('ul')[1].hover
       ).to have_link('利用者一覧')

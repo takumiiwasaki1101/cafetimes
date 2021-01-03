@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'レビューの投稿機能', type: :system do
   before do
-    # レビュー情報の投稿
+    # コーヒー情報の登録
     @coffee = FactoryBot.create(:coffee)
 
     # フォームに入力する情報をインスタンス変数に代入
@@ -77,6 +77,152 @@ RSpec.describe 'レビューの投稿機能', type: :system do
 
       # レビュー豆の投稿ページにエラーメッセージが表示されていることを確認する
       expect(page).to have_selector '#error-alert'
+    end
+  end
+end
+
+RSpec.describe 'レビューの編集機能', type: :system do
+  before do
+
+    # レビュー情報の登録
+    @review1 = FactoryBot.create(:review)
+    @review2 = FactoryBot.create(:review)
+
+    # 編集用情報の生成
+    @review = Faker::Lorem.sentence
+  end
+
+  context 'レビュー編集成功' do
+    it 'ログインしたユーザーは自分が登録したレビュー情報の編集ができる' do
+      # レビュー1を登録したユーザーでログインする
+      sign_in(@review1.user)
+
+      # ログイン後のヘッダーの名前にカーソルを移動すると「マイページ」ボタンがあることを確認する
+      expect(
+        all('ul')[1].hover
+      ).to have_link('マイレビュー')
+
+      # マイレビューへ遷移する
+      visit user_path(@review1.user.id)
+
+      # レビューの詳細ページへ遷移する
+      visit review_path(@review1)
+
+      # ページ下部に「編集」ボタンがあることを確認する
+      expect(
+        page
+      ).to have_link '編集'
+
+      # レビューの編集ページへ遷移する
+      click_on '編集'
+
+      # すでに登録済みのレビューがフォームに入っていることを確認する
+      expect(
+        find('#review').value
+      ).to eq @review1.review
+
+      # 登録内容を編集する
+      fill_in 'review', with: @review
+
+      # 編集してもCoffeeモデルのカウントは変わらないことを確認する
+      expect  do
+        find('input[name="commit"]').click
+      end.to change { Review.count }.by(0)
+
+      # マイレビューに遷移したことを確認する
+      expect(current_path).to eq user_path(@review1.user.id)
+
+      # マイレビューに先ほどの変更内容が含まれていることを確認する
+      expect(page).to have_content @review
+    end
+  end
+
+  context 'レビュー編集失敗' do
+    it 'ログインしたユーザーは自分以外が登録したレビュー情報の編集画面には遷移できない' do
+      # レビュー1を登録したユーザーでログインする
+      sign_in(@review1.user)
+
+      # ログイン後のヘッダーの名前にカーソルを移動すると「利用者一覧」ボタンがあることを確認する
+      expect(
+        all('ul')[1].hover
+      ).to have_link('利用者一覧')
+
+      # 利用者一覧へ遷移する
+      visit users_path
+
+      # レビュー2を登録したユーザーのマイレビューへ遷移する
+      click_on @review2.user.nickname
+
+      # ページ下部に「編集」ボタンがないことを確認する
+      expect(
+        page
+      ).to have_no_link '編集'
+
+    end
+  end
+end
+
+RSpec.describe 'レビューの削除機能', type: :system do
+  before do
+    # レビュー情報の登録
+    @review1 = FactoryBot.create(:review)
+    @review2 = FactoryBot.create(:review)
+  end
+
+  context 'レビュー削除成功' do
+    it 'ログインしたユーザーは自分が登録したレビュー情報の削除ができる' do
+      # レビューを登録したユーザーでログインする
+      sign_in(@review1.user)
+
+      # ログイン後のヘッダーの名前にカーソルを移動すると「マイページ」ボタンがあることを確認する
+      expect(
+        all('ul')[1].hover
+      ).to have_link('マイレビュー')
+
+      # マイレビューへ遷移する
+      visit user_path(@review1.user.id)
+
+      # レビューの詳細ページへ遷移する
+      visit review_path(@review1)
+
+      # ページ下部に「編集」ボタンがあることを確認する
+      expect(
+        page
+      ).to have_link '削除'
+
+      # レビューを削除するとレコードの数が1減ることを確認する
+      expect do
+        click_on '削除'      
+      end.to change { Review.count }.by(-1)
+
+      # マイレビューに遷移したことを確認する
+      expect(current_path).to eq user_path(@review1.user.id)
+
+      # マイレビューには@review1の内容が存在しないことを確認する
+      expect(page).to have_no_content @review1.review
+    end
+  end
+
+  context 'レビュー編集失敗' do
+    it 'ログインしたユーザーは自分以外が登録したレビュー情報の削除はできない' do
+      # レビュー1を登録したユーザーでログインする
+      sign_in(@review1.user)
+
+      # ログイン後のヘッダーの名前にカーソルを移動すると「利用者一覧」ボタンがあることを確認する
+      expect(
+        all('ul')[1].hover
+      ).to have_link('利用者一覧')
+
+      # 利用者一覧へ遷移する
+      visit users_path
+
+      # レビュー2を登録したユーザーのマイレビューへ遷移する
+      click_on @review2.user.nickname
+
+      # ページ下部に「編集」ボタンがないことを確認する
+      expect(
+        page
+      ).to have_no_link '削除'
     end
   end
 end
