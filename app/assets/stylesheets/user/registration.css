@@ -230,6 +230,7 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+  display: inline-block;
 }
 
 .register-info {
