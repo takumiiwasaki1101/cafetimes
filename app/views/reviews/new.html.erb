@@ -12,11 +12,20 @@
 
     <%# 該当コーヒー情報の表示 %>
     <div class='form-header' style="background-image: url('<%= @coffee.country.image %>');">
-      <h1 class='form-header-text-review'>
-        <span class='first'>銘柄:<%= @coffee.name %></span>      
-        <span class='second'>購入日:<%= @coffee.date_of_purchase %></span>      
-        <span class='third'>購入店:<%= @coffee.shop %></span>      
-      </h1>
+      <div class='form-header-text-review'>
+        <div class='line'>
+          <label class='title'>銘柄</label>
+          <span class='output'>:<%= @coffee.name %></span>
+        </div>      
+        <div class='line'>
+          <label class='title'>購入日</label>
+          <span class='output'>:<%= @coffee.date_of_purchase %></span>
+        </div>      
+        <div class='line'>
+          <label class='title'>購入店</label>
+          <span class='output'>:<%= @coffee.shop %></span>
+        </div>      
+      </div>
     </div>
     <%# //該当コーヒー情報の表示 %>
 
