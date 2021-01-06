@@ -60,7 +60,7 @@ https://www.enjoy-cafetimes.com/
 Ruby(2.6.5), Ruby on Rails(6.0.0)
 
 ## フロントエンド
-Html
+HTML,CSS
 
 ## データベース
 MySQL2(0.5.3), SequelPro
