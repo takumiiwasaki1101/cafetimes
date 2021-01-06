@@ -16,8 +16,8 @@
 https://www.enjoy-cafetimes.com/
 
 ログイン情報（テスト用）
-- Eメール: test@yahoo.co.jp
-- パスワード: test1234 
+- Eメール: test@gmail.com
+- パスワード: test2236 
 
 # 制作背景（意図）
 
