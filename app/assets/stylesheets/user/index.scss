@@ -1,7 +1,8 @@
 .card-user-index {
   position: relative;
-  width: calc((100% - 50px) / 3);
+  width: calc((100% - 48px) / 3);
   margin-bottom: 25px;
+  margin-right: 16px;
   background-size: cover;
   background-position: center;
   height: 100px;
@@ -27,3 +28,25 @@
   color: #aaa;
   text-shadow: none
 }
+
+ /* タブレット表示時 */
+ @media (max-width: 1024px){
+  .inner {
+    width: 90%;
+    margin: 20 auto;
+  }
+
+  .card-user-index {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+}
+
+ /* スマホ表示時 */
+ @media (max-width: 599px) {
+
+  .card-user-index {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+ }
