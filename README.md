@@ -1,4 +1,4 @@
-![カフェタイムズ](https://user-images.githubusercontent.com/61103261/103727325-5cbc0900-501e-11eb-93b9-ce7946f7707f.gif)
+![カフェタイムズ](https://user-images.githubusercontent.com/61103261/103733037-25545900-502c-11eb-8053-776248649695.gif)
 
 # :coffee:アプリ概要
 
