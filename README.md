@@ -1,3 +1,5 @@
+![カフェタイムズ](https://user-images.githubusercontent.com/61103261/103727325-5cbc0900-501e-11eb-93b9-ce7946f7707f.gif)
+
 # アプリ概要
 
 <dl>
