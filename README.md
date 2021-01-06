@@ -21,6 +21,14 @@ https://www.enjoy-cafetimes.com/
 - Eメール: test@gmail.com
 - パスワード: test2236 
 
+# demo
+
+## コーヒー豆の登録機能
+![コーヒー豆の登録](https://user-images.githubusercontent.com/61103261/103737912-7cf7c200-5036-11eb-97b5-46774297e4cb.gif)
+
+## レビューの登録機能
+
+
 # :memo:制作背景
 
 1. アプリの方向性（記録ツールの選定理由）<br>
