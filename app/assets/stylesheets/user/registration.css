@@ -241,7 +241,7 @@
 }
 
 /* スマホ表示時 */
-@media (max-width: 599px) {
+@media (max-width: 1024px) {
   .form-wrap {
     width: 80%;  
   }
