@@ -240,7 +240,7 @@
   cursor: pointer;
 }
 
-/* スマホ表示時 */
+/* タブレット表示時 */
 @media (max-width: 1024px) {
   .form-wrap {
     width: 80%;  
@@ -248,13 +248,17 @@
   .form-wrap-show {
     width: 95%;
   }  
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
 
   .form-header-text-review {
     left: 5px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 170px;
+    width: 180px;
     text-align: left;
     font-size: 14px;
   }  
