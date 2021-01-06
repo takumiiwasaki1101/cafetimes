@@ -21,7 +21,7 @@ https://www.enjoy-cafetimes.com/
 - Eメール: test@gmail.com
 - パスワード: test2236 
 
-# demo
+# :movie_camera:Demo
 
 ## コーヒー豆の登録機能
 ![コーヒー豆の登録](https://user-images.githubusercontent.com/61103261/103737912-7cf7c200-5036-11eb-97b5-46774297e4cb.gif)
@@ -30,8 +30,7 @@ https://www.enjoy-cafetimes.com/
 ![レビューの投稿](https://user-images.githubusercontent.com/61103261/103738257-05766280-5037-11eb-94a8-1dfbe2c987a3.gif)
 
 ## レスポンシブデザイン
-
-
+![レスポンシブデザイン](https://user-images.githubusercontent.com/61103261/103738421-4d958500-5037-11eb-8d10-8aeda0237a24.gif)
 
 # :memo:制作背景
 
