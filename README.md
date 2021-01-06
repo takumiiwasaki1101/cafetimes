@@ -26,7 +26,11 @@ https://www.enjoy-cafetimes.com/
 ## コーヒー豆の登録機能
 ![コーヒー豆の登録](https://user-images.githubusercontent.com/61103261/103737912-7cf7c200-5036-11eb-97b5-46774297e4cb.gif)
 
-## レビューの登録機能
+## レビューの投稿機能
+![レビューの投稿](https://user-images.githubusercontent.com/61103261/103738257-05766280-5037-11eb-94a8-1dfbe2c987a3.gif)
+
+## レスポンシブデザイン
+
 
 
 # :memo:制作背景
