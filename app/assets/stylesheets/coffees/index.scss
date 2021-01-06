@@ -6,14 +6,14 @@
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
 }
 
 .card {
   position: relative;
-  width: calc((100% - 50px) / 3);
+  width: calc((100% - 48px) / 3);
   margin-bottom: 25px;
+  margin-right: 16px;
   background-size: cover;
   background-position: center;
   height: 200px;
